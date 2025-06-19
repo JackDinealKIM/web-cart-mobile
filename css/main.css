@@ -56,15 +56,15 @@ body {
 
 .product-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .product-image {
     position: relative;
-    aspect-ratio: 1;
+    aspect-ratio: 3/4;
     overflow: hidden;
+    background-color: #f8f8f8;
 }
 
 .product-image img {
@@ -73,11 +73,11 @@ body {
     object-fit: cover;
 }
 
-.event-tag, .sale-tag, .location-tag {
+.event-tag, .sale-tag {
     position: absolute;
-    padding: 4px 8px;
+    padding: 6px 12px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     z-index: 1;
 }
@@ -87,24 +87,37 @@ body {
     left: 12px;
     background-color: #FFE4B5;
     color: #000;
+    border-radius: 5px;
+    padding: 5px 5px;
 }
 
 .sale-tag {
     top: 12px;
     right: 12px;
-    background-color: #FF6B6B;
+    background-color: #FF4B4B;
     color: white;
+    font-weight: bold;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
 }
 
 .location-tag {
+    position: absolute;
     display: flex;
     align-items: center;
     gap: 4px;
-    top: 12px;
-    right: 12px;
+    bottom: 40px;
+    left: 12px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 6px 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
 }
 
 .location-tag::before {
@@ -121,19 +134,31 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 24px 12px 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 36px;
 }
 
 .pickup-time {
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
 }
 
 .status-tag {
-    font-size: 14px;
+    font-size: 13px;
+    color: white;
+    background-color: #FF4B4B;
+    padding: 0 16px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-info {
@@ -141,14 +166,14 @@ body {
 }
 
 .product-title {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 8px;
     color: #333;
 }
 
 .product-price {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: #000;
     margin-bottom: 12px;
@@ -163,7 +188,7 @@ body {
 .cart-button, .buy-button {
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -184,7 +209,7 @@ body {
     width: 100%;
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: #eee;
     color: #999;
     font-size: 14px;
