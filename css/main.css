@@ -11,6 +11,7 @@ body {
     font-size: 14px;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
+    padding-top: 56px;
 }
 
 /* Header */
@@ -22,6 +23,11 @@ body {
     justify-content: space-between;
     color: white;
     height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
 }
 
 .header-left {
@@ -572,4 +578,8 @@ body {
     font-weight: 700;
     text-align: right;
     margin-bottom: 16px;
+}
+
+.search-container {
+    padding-top: 0 !important;
 }
