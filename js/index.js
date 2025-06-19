@@ -190,4 +190,16 @@ function validateSelection() {
     }
 
     return true;
+}
+
+function handleCalendarClick() {
+    alert('캘린더 기능은 준비 중입니다.');
+}
+
+function handleSettingsClick() {
+    alert('설정 기능은 준비 중입니다.');
+}
+
+function handleSearchClick() {
+    window.location.href = 'search.html';
 } 

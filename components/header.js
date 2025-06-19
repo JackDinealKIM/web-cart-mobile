@@ -21,7 +21,7 @@ class Header extends HTMLElement {
                                 <path d="M16 2L16 6" stroke="white" stroke-width="2"/>
                             </svg>
                         </button>
-                        <button class="icon-button" onclick="location.href='search/search.html'">
+                        <button class="icon-button" onclick="location.href='/search.html'">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2"/>
                                 <path d="M20 20L16 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
