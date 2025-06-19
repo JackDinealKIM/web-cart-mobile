@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색바 화면</title>
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+    <div class="search-container">
+        <header class="search-header">
+            <button class="back-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 4L7 12L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="search-bar">
+                <input type="text" placeholder="원하시는 상품을 찾아보세요.">
+                <button class="search-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+                        <path d="M20 20L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <section class="search-history">
+            <div class="history-header">
+                <h2>최근 검색어</h2>
+                <button class="clear-all">전체 삭제</button>
+            </div>
+            <div class="history-tags">
+                <div class="tag">
+                    전복죽
+                    <button class="remove-tag">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="tag">
+                    샤브샤브
+                    <button class="remove-tag">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="tag">
+                    떠먹는윌
+                    <button class="remove-tag">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="tag">
+                    전복죽
+                    <button class="remove-tag">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommended-search">
+            <h2>추천 검색어</h2>
+            <div class="recommended-tags">
+                <div class="tag">전복죽</div>
+                <div class="tag">전복죽</div>
+                <div class="tag">샤브샤브</div>
+                <div class="tag">떠먹는윌</div>
+                <div class="tag">전복죽</div>
+                <div class="tag">전복죽</div>
+                <div class="tag">전복죽</div>
+                <div class="tag">전복죽</div>
+            </div>
+        </section>
+    </div>
+
+    <store-footer></store-footer>
+
+    <script src="../components/footer.js"></script>
+    <script src="search.js"></script>
+</body>
+</html> 
