@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <header class="header">
+        <span class="back-btn" onclick="history.back()">←</span>
+        <span class="cart-title">장바구니</span>
+        <span style="width:24px;"></span>
+    </header>
+    <main class="cart-container">
+        <div class="cart-notice">
+            <span class="cart-notice-emoji">📢</span>
+            <span class="cart-notice-text">천안 불당지웰시티점 입니다.<br>주문은 오전 9시까지, 수령은 오후 8시까지 입니다.</span>
+        </div>
+        <div class="cart-store-select">
+            <button class="cart-store-btn">천안 불당지웰시티점 <span>▼</span></button>
+        </div>
+        <div class="cart-select-bar">
+            <label class="cart-select-all"><input type="checkbox" class="cart-select-checkbox"> 전체 선택</label>
+            <button class="cart-delete-btn">선택 삭제</button>
+        </div>
+        <div class="cart-section">
+            <div class="cart-product">
+                <input type="checkbox" class="cart-select-checkbox">
+                <img src="https://picsum.photos/300/400?random=11" class="cart-product-img" alt="전복죽">
+                <div class="cart-product-info">
+                    <div class="cart-product-title">이고장 명품 전복죽</div>
+                    <div class="cart-product-meta">4,900원 / 1개</div>
+                    <div class="cart-product-desc">텍스트텍스트텍스트텍스트텍스트텍스트</div>
+                    <div class="cart-product-meta">
+                        <span class="cart-product-badge">현장 수령</span>
+                    </div>
+                    <div class="cart-product-qty">
+                        <button class="cart-product-qty-btn">-</button>
+                        <input type="text" class="cart-product-qty-input" value="1" readonly>
+                        <button class="cart-product-qty-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-product-price">4,900원</div>
+                <button class="cart-product-remove">×</button>
+            </div>
+        </div>
+        <div class="cart-section">
+            <div class="cart-product">
+                <input type="checkbox" class="cart-select-checkbox" checked>
+                <img src="https://picsum.photos/300/400?random=16" class="cart-product-img" alt="달달맛밤">
+                <div class="cart-product-info">
+                    <div class="cart-product-title">달달맛밤</div>
+                    <div class="cart-product-meta">3,000원 / 2개</div>
+                    <div class="cart-product-desc">텍스트텍스트텍스트텍스트텍스트텍스트</div>
+                    <div class="cart-product-meta">
+                        <span class="cart-product-badge">현장 수령</span>
+                    </div>
+                    <div class="cart-product-qty">
+                        <button class="cart-product-qty-btn">-</button>
+                        <input type="text" class="cart-product-qty-input" value="1" readonly>
+                        <button class="cart-product-qty-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-product-price">3,000원</div>
+                <button class="cart-product-remove">×</button>
+            </div>
+        </div>
+        <div class="cart-summary-bar">
+            <span class="cart-summary-label">총 금액</span>
+            <span class="cart-summary-value">7,900원</span>
+        </div>
+        <div class="cart-footer">
+            <button class="cart-footer-btn">결제하기</button>
+        </div>
+    </main>
+    <footer class="footer">
+        <!-- footer 내용 또는 컴포넌트 -->
+    </footer>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/cart.js"></script>
+</body>
+</html> 
