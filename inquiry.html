@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 상담</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen w-full">
+    <default-header title="1:1 상담"></default-header>
+    <div class="w-full mx-auto">
+        <div class="flex gap-2 pt-4 px-4 w-full">
+            <button class="flex-1 h-12 rounded-xl border-2 border-green-900 text-[17px] font-bold transition-colors bg-white text-green-900">상담내역</button>
+            <button class="flex-1 h-12 rounded-xl border-2 border-green-900 text-[17px] font-bold transition-colors bg-green-900 text-white">1:1 상담문의</button>
+        </div>
+        <form class="w-full flex flex-col gap-8 mt-8 px-4">
+            <div>
+                <label class="block text-lg font-bold text-gray-900 mb-2">상담유형<span class="text-red-500 ml-1">*</span></label>
+                <div class="flex gap-4">
+                    <select class="flex-1 h-14 rounded-lg border border-gray-300 bg-gray-50 px-4 text-base text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-green-900">
+                        <option>통신사</option>
+                    </select>
+                    <select class="flex-1 h-14 rounded-lg border border-gray-300 bg-gray-50 px-4 text-base text-gray-700 appearance-none focus:outline-none focus:ring-2 focus:ring-green-900">
+                        <option>선/후불</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="block text-lg font-bold text-gray-900 mb-2">내용<span class="text-red-500 ml-1">*</span></label>
+                <textarea class="w-full h-48 rounded-lg border border-gray-300 bg-gray-50 p-4 text-base text-gray-700 resize-none focus:outline-none focus:ring-2 focus:ring-green-900" placeholder="내용을 입력해주세요. (최소 10자 이상 / 1500자 이내)" maxlength="1500"></textarea>
+                <div class="text-right text-base text-black mt-1"><span class="inquiry-text-count">0</span> / 1500</div>
+            </div>
+            <div>
+                <label class="block text-lg font-bold text-gray-900 mb-2">파일첨부</label>
+                <div class="flex gap-4 items-center">
+                    <input type="file" id="inquiry-file" class="hidden">
+                    <label for="inquiry-file" class="flex-1 h-14 flex items-center rounded-lg border border-blue-400 bg-white px-4 text-base text-gray-700 cursor-pointer">파일선택</label>
+                    <button type="button" class="h-14 w-28 rounded-lg bg-green-900 text-white font-bold text-lg">등록</button>
+                </div>
+                <ul class="mt-3 text-sm text-gray-700 list-disc list-inside space-y-1">
+                    <li>첨부 파일 용량은 10MB를 초과하실 수 없습니다.</li>
+                    <li>이미지(jpg, jpeg, gif, png)파일을 첨부하실 수 있습니다.</li>
+                </ul>
+            </div>
+            <button type="submit" class="w-full h-14 rounded-xl bg-green-900 text-white text-xl font-bold mt-8">등록하기</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="common/default_header.js"></script>
+    <script>
+    $(function() {
+      var $textarea = $('textarea');
+      var $count = $('.inquiry-text-count');
+      $textarea.on('input', function() {
+        $count.text($(this).val().length);
+      });
+    });
+    </script>
+</body>
+</html> 

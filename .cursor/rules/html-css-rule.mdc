@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Cursor Rule: Tailwind CSS & jQuery Only
+Styling:
+Use only Tailwind CSS utility classes for all UI and layout styling.
+Do not write or edit any custom CSS files or <style> tags.
+JavaScript:
+Use only jQuery for all DOM manipulation, event handling, and AJAX.
+Do not use vanilla JS, other frameworks, or custom JS libraries.
+HTML:
+Compose all markup using semantic HTML and Tailwind utility classes.
+No inline styles or custom CSS classes.
+Componentization:
+If you need reusable UI, use HTML partials or jQuery-based rendering, not custom elements or frameworks.
+Example:
+ <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Click me</button>
+  <script>
+    $(function() {
+      $('button').on('click', function() {
+        alert('Button clicked!');
+      });
+    });
+  </script>

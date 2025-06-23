@@ -10,11 +10,7 @@
     <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
-    <header class="header">
-        <span class="back-btn" onclick="history.back()">←</span>
-        <span class="cart-title">장바구니</span>
-        <span style="width:24px;"></span>
-    </header>
+    <navigation-header title="장바구니" show-back class="header"></navigation-header>
     <main class="cart-container">
         <div class="cart-notice">
             <span class="cart-notice-emoji">📢</span>
@@ -80,7 +76,7 @@
     <footer class="footer">
         <!-- footer 내용 또는 컴포넌트 -->
     </footer>
-    <script src="components/header.js"></script>
+    <script src="components/navigation_header.js"></script>
     <script src="components/footer.js"></script>
     <script src="components/cart.js"></script>
 </body>
