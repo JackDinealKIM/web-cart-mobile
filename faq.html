@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1:1 상담 - 상담내역</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/faq.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body class="bg-white min-h-screen w-full">
-    <!--#include file="common/default_header.html" title="1:1 상담" -->
     <default-header title="1:1 상담"></default-header>
     <div class="w-full mx-auto">
         <div class="flex gap-2 pt-4 px-4 w-full">
-            <button class="faq-tab active flex-1 h-12 rounded-t-xl border border-green-900 text-[17px] font-bold transition-colors bg-green-900 text-white">상담내역</button>
-            <button class="faq-tab flex-1 h-12 rounded-t-xl border border-green-900 text-[17px] font-bold transition-colors bg-white text-green-900">1:1 상담문의</button>
+            <button
+                class="faq-tab active flex-1 h-12 rounded-xl border border-green-900 text-[17px] font-bold transition-colors bg-green-900 text-white">상담내역</button>
+            <button
+                class="faq-tab flex-1 h-12 rounded-xl border border-green-900 text-[17px] font-bold transition-colors bg-white text-green-900">1:1
+                상담문의</button>
         </div>
         <div class="flex items-center justify-between px-4 mt-5 mb-3 w-full">
             <span class="text-base text-gray-900 font-semibold">전체 <b class="text-green-900">73건</b></span>
-            <button class="border border-green-900 text-green-900 rounded px-3 py-1 text-sm font-medium hover:bg-green-900 hover:text-white transition">문의하기</button>
+            <button
+                class="border border-green-900 text-green-900 rounded px-3 py-1 text-sm font-medium hover:bg-green-900 hover:text-white transition">문의하기</button>
         </div>
         <hr class="w-full border-t border-gray-200 mb-4" />
         <ul class="flex flex-col gap-3 px-4 w-full">
             <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
-                <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
+                <!-- 질문 영역 (클릭 대상) -->
+                <div
+                    class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
                     <span class="text-green-700 font-bold text-lg">Q.</span>
                     <span class="flex-1">ID와 비밀번호 찾기는 어떻게 하나요?</span>
                     <span class="faq-arrow text-2xl text-gray-400 ml-2 transition-transform">▼</span>
                 </div>
+                <!-- 답변 영역 (토글 대상) -->
                 <div class="faq-a text-base text-gray-700 mt-2 ml-7 hidden">
                     APP 접속 화면에서 ID/PW 찾기를 통해 회원가입 시 인증한 대표자의 휴대폰번호 인증 후 ID는 암호화되어 제공되며, PW는 재설정하실 수 있습니다.
                 </div>
             </li>
             <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
-                <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
+                <div
+                    class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
                     <span class="text-green-700 font-bold text-lg">Q.</span>
                     <span class="flex-1">비밀번호 변경은 어떻게 하나요?</span>
                     <span class="faq-arrow text-2xl text-gray-400 ml-2 transition-transform">▼</span>
@@ -43,7 +51,8 @@
                 </div>
             </li>
             <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
-                <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
+                <div
+                    class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
                     <span class="text-green-700 font-bold text-lg">Q.</span>
                     <span class="flex-1">추가 ID 발급이 가능한가요?</span>
                     <span class="faq-arrow text-2xl text-gray-400 ml-2 transition-transform">▼</span>
@@ -53,7 +62,8 @@
                 </div>
             </li>
             <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
-                <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
+                <div
+                    class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[17px] font-bold text-gray-900 w-full">
                     <span class="text-green-700 font-bold text-lg">Q.</span>
                     <span class="flex-1">비밀번호가 5회 틀렸습니다. 어떻게 해야하나요?</span>
                     <span class="faq-arrow text-2xl text-gray-400 ml-2 transition-transform">▼</span>
@@ -64,8 +74,32 @@
             </li>
         </ul>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/faq.js"></script>
+
+    <script>
+        // 문서가 모두 로드된 후 스크립트 실행
+        $(function () {
+            // 상단 탭 버튼 클릭 이벤트
+            $('.faq-tab').on('click', function () {
+                $('.faq-tab')
+                    .removeClass('active bg-green-900 text-white')
+                    .addClass('bg-white text-green-900');
+
+                $(this)
+                    .addClass('active bg-green-900 text-white')
+                    .removeClass('bg-white text-green-900');
+            });
+
+            // FAQ 질문 클릭 이벤트 (아코디언 토글)
+            $('.faq-q').on('click', function () {
+                // 1. 답변 영역을 즉시 토글합니다. (slideToggle -> toggle로 변경)
+                $(this).next('.faq-a').toggle(); // << 이 부분을 수정했습니다.
+
+                // 2. 화살표 방향을 토글합니다.
+                $(this).find('.faq-arrow').toggleClass('rotate-180');
+            });
+        });
+    </script>
     <script src="common/default_header.js"></script>
 </body>
-</html> 
+
+</html>
