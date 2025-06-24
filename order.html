@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문하기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-white min-h-screen w-full flex flex-col">
+    <default-header title="이고장 명품 전복죽" showCart="true" showHome="true"></default-header>
+    <!-- 상단 상품 이미지 -->
+    <div class="w-full bg-gray-100 flex items-center justify-center overflow-hidden h-[40vh] max-h-[550px]">
+        <img src="https://picsum.photos/600/400?random=11" alt="이고장 명품 전복죽" class="w-full h-full object-cover" />
+    </div>
+    <main class="flex-1 w-full max-w-xl mx-auto px-4 pb-32">
+        <!-- 상품명/가격 -->
+        <div class="pt-6 pb-4">
+            <div class="text-2xl font-bold mb-2">이고장 명품 전복죽</div>
+            <div class="text-2xl font-bold">4,900원</div>
+        </div>
+        <!-- 수령정보 -->
+        <div class="border-t border-gray-200 pt-6 pb-2">
+            <div class="text-lg font-bold mb-2">수령정보</div>
+            <div class="bg-cyan-50 rounded-xl px-4 py-3 flex items-center gap-3">
+                <span>6월 11일 / 11시 이후</span>
+                <span class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded ml-2"><img src="./images/location.png" width="14" class="mr-1"/>현장 수령</span>
+            </div>
+        </div>
+        <!-- 상품정보 -->
+        <div class="border-t border-gray-200 pt-6 pb-2 mt-6">
+            <div class="text-lg font-bold mb-2">상품정보</div>
+            <div class="bg-cyan-50 rounded-xl px-4 py-3">6월 11일 / 11시 이후</div>
+        </div>
+        <!-- 하단 버튼 -->
+        <div class="fixed left-0 right-0 bottom-0 bg-white z-30 px-4 pb-6 pt-4 flex gap-4 max-w-xl mx-auto">
+            <button class="flex-1 border-2 border-green-900 text-green-900 bg-white rounded-xl py-4 text-lg font-bold">장바구니</button>
+            <button class="flex-1 bg-[#054944] text-white rounded-xl py-4 text-lg font-bold">주문하기</button>
+        </div>
+    </main>
+    <script src="common/default_header.js"></script>
+    <script>
+      $(function() {
+        // 주문하기 버튼 클릭 이벤트
+        $("button:contains('주문하기')").on('click', function() {
+          // 이미 토스트가 있으면 제거
+          $("#order-toast").remove();
+          // 토스트 HTML 생성
+          const toast = $(
+            `<div id="order-toast" class="fixed left-1/2 top-28 z-50 -translate-x-1/2 flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#054944] text-white text-sm font-bold shadow-lg opacity-0 pointer-events-none transition-all duration-300">
+              <img src="images/order_complete.png" alt="달력" class="w-8 h-8 mr-1" />
+              정상적으로 주문이 완료되었습니다.
+            </div>`
+          );
+          // 헤더 바로 아래에 삽입
+          $("default-header").after(toast);
+          // 애니메이션: opacity 0→100, pointer-events auto
+          setTimeout(function() {
+            toast.removeClass('opacity-0 pointer-events-none').addClass('opacity-100');
+          }, 10);
+          // 3초 후 사라짐(페이드아웃)
+          setTimeout(function() {
+            toast.removeClass('opacity-100').addClass('opacity-0 pointer-events-none');
+            setTimeout(function() { toast.remove(); }, 300);
+          }, 3000);
+        });
+      });
+    </script>
+</body>
+</html> 
