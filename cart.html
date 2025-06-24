@@ -10,8 +10,9 @@
 </head>
 
 <body class="bg-[#fff] min-h-screen w-full flex flex-col">
-    <!-- header 복사 -->
-    <default-header title="장바구니"></default-header>
+    <!-- header -->
+    <default-header title="장바구니" class="fixed top-0 left-0 w-full z-40"></default-header>
+    <div class="h-14"></div>
     <!-- 안내 박스 (상단) -->
     <div class="flex justify-center w-full mt-6 mb-4">
         <div class="bg-gray-100 rounded-2xl px-8 py-4 flex items-center gap-3 shadow max-w-xl w-full mx-4">
@@ -111,21 +112,7 @@
         </div>
     </main>
     <!-- 하단 네비게이션 -->
-    <nav
-        class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-center items-center px-0 py-3 z-10">
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/home.png" width="28px" height="28px" />
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/cart.png" width="28px" height="28px" />
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/chat.png" width="28px" height="28px" />
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/my.png" width="28px" height="28px" />
-        </button>
-    </nav>
+    <default-bottom></default-bottom>
     <!-- 총 금액/결제하기 UI -->
     <div id="cart-total-bar" class="fixed left-0 right-0 bottom-0 bg-white z-30 border-t border-gray-200 px-4 py-6 hidden">
         <div class="max-w-xl mx-auto">
@@ -137,6 +124,7 @@
         </div>
     </div>
     <script src="common/default_header.js"></script>
+    <script src="common/default_bottom.js"></script>
     <script>
         $(function () {
             // 전체 선택

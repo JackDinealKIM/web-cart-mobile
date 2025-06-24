@@ -8,7 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="bg-white min-h-screen w-full flex flex-col">
-    <default-header title="이고장 명품 전복죽" showCart="true" showHome="true"></default-header>
+    <default-header title="이고장 명품 전복죽" showCart="true" showHome="true" class="fixed top-0 left-0 w-full z-40"></default-header>
+    <div class="h-14"></div>
     <!-- 상단 상품 이미지 -->
     <div class="w-full bg-gray-100 flex items-center justify-center overflow-hidden h-[40vh] max-h-[550px]">
         <img src="https://picsum.photos/600/400?random=11" alt="이고장 명품 전복죽" class="w-full h-full object-cover" />
@@ -41,6 +42,10 @@
     <script src="common/default_header.js"></script>
     <script>
       $(function() {
+        // 장바구니 버튼 클릭 시 cart.html로 이동
+        $("button:contains('장바구니')").on('click', function() {
+          location.href = 'cart.html';
+        });
         // 주문하기 버튼 클릭 이벤트
         $("button:contains('주문하기')").on('click', function() {
           // 이미 토스트가 있으면 제거
@@ -58,11 +63,11 @@
           setTimeout(function() {
             toast.removeClass('opacity-0 pointer-events-none').addClass('opacity-100');
           }, 10);
-          // 3초 후 사라짐(페이드아웃)
+          // 1초 후 my_order.html로 이동 (toast는 자연스럽게 사라짐)
           setTimeout(function() {
             toast.removeClass('opacity-100').addClass('opacity-0 pointer-events-none');
-            setTimeout(function() { toast.remove(); }, 300);
-          }, 3000);
+            setTimeout(function() { toast.remove(); location.href = 'my_order.html'; }, 300);
+          }, 1000);
         });
       });
     </script>

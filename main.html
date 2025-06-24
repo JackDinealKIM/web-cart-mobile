@@ -10,18 +10,20 @@
 </head>
 
 <body class="bg-[#fff] min-h-screen w-full flex flex-col">
+    <default-header title="이고장 명품 전복죽" showCart="true" showHome="true" class="fixed top-0 left-0 w-full z-40"></default-header>
+    <div class="h-14"></div>
     <header class="w-full flex items-center justify-between bg-[#0b4d47] px-4 py-3">
         <img src="images/logo.png" alt="로고" class="w-12 h-12 object-contain" />
         <span class="flex-1 text-white text-lg font-bold text-center">천안 불당지웰시티점 <span
                 class="align-middle">▼</span></span>
         <div class="flex items-center gap-4 min-w-[110px] pr-2">
-            <button class="text-white focus:outline-none">
+            <button id="icon-faq" class="text-white focus:outline-none">
                 <img src="images/calendar.png" width="21px" height="21px" />
             </button>
-            <button class="text-white focus:outline-none">
+            <button id="icon-search" class="text-white focus:outline-none">
                 <img src="images/search.png" width="21px" height="21px" />
             </button>
-            <button class="text-white focus:outline-none">
+            <button id="icon-setting" class="text-white focus:outline-none">
                 <img src="images/setting.png" width="30px" height="30px" />
             </button>
         </div>
@@ -52,7 +54,7 @@
                     <div class="text-sm font-medium text-gray-900">신발탈취제</div>
                     <div class="text-base font-bold mt-1 mb-2">4,900원</div>
                     <div class="flex gap-2 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs">장바구니</button>
+                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs cart-btn">장바구니</button>
                         <button class="flex-1 border border-gray-300 rounded py-1 text-xs purchase-btn">구매하기</button>
                     </div>
                 </div>
@@ -80,7 +82,7 @@
                     <div class="text-sm font-medium text-gray-900">신발탈취제</div>
                     <div class="text-base font-bold mt-1 mb-2">4,900원</div>
                     <div class="flex gap-2 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs">장바구니</button>
+                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs cart-btn">장바구니</button>
                         <button class="flex-1 border border-gray-300 rounded py-1 text-xs purchase-btn">구매하기</button>
                     </div>
                 </div>
@@ -108,7 +110,7 @@
                     <div class="text-sm font-medium text-gray-900">신발탈취제</div>
                     <div class="text-base font-bold mt-1 mb-2">4,900원</div>
                     <div class="flex gap-2 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs">장바구니</button>
+                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs cart-btn">장바구니</button>
                         <button class="flex-1 border border-gray-300 rounded py-1 text-xs purchase-btn">구매하기</button>
                     </div>
                 </div>
@@ -136,7 +138,7 @@
                     <div class="text-sm font-medium text-gray-900">신발탈취제</div>
                     <div class="text-base font-bold mt-1 mb-2">4,900원</div>
                     <div class="flex gap-2 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs">장바구니</button>
+                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs cart-btn">장바구니</button>
                         <button class="flex-1 border border-gray-300 rounded py-1 text-xs purchase-btn">구매하기</button>
                     </div>
                 </div>
@@ -164,31 +166,13 @@
                     <div class="text-sm font-medium text-gray-900">신발탈취제</div>
                     <div class="text-base font-bold mt-1 mb-2">4,900원</div>
                     <div class="flex gap-2 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs">장바구니</button>
+                        <button class="flex-1 border border-gray-300 rounded py-1 text-xs cart-btn">장바구니</button>
                         <button class="flex-1 border border-gray-300 rounded py-1 text-xs purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- 하단 네비게이션 -->
-    <nav
-        class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-center items-center px-0 py-3 z-10">
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/home.png" width="28px" height="28px" />
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/cart.png" width="28px" height="28px" />
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/chat.png" width="28px" height="28px" />
-
-        </button>
-        <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
-            <img src="./images/my.png" width="28px" height="28px" />
-        </button>
-    </nav>
-
     <!-- 바텀시트 -->
     <div id="bottom-sheet-backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-20"></div>
     <div id="bottom-sheet"
@@ -237,8 +221,8 @@
                 <span class="text-xl font-bold" id="total-price">4,900원</span>
             </div>
             <div class="flex gap-3 mt-2">
-                <button class="flex-1 bg-white border border-green-900 text-green-900 rounded-lg py-3 font-bold">장바구니</button>
-                <button class="flex-1 bg-[#0b4d47] text-white rounded-lg py-3 font-bold">바로구매</button>
+                <button class="flex-1 bg-white border border-green-900 text-green-900 rounded-lg py-3 font-bold cart-btn">장바구니</button>
+                <button class="flex-1 bg-[#0b4d47] text-white rounded-lg py-3 font-bold purchase-btn-click">바로구매</button>
             </div>
         </div>
     </div>
@@ -327,8 +311,24 @@
                     $('#pay-cash, #pay-card').not(this).prop('checked', false);
                 }
             });
+
+            $('#icon-faq').on('click', function() { location.href = 'faq.html'; });
+            $('#icon-search').on('click', function() { location.href = 'search.html'; });
+            $('#icon-setting').on('click', function() { location.href = 'setting.html'; });
+
+            // 상품 카드 내 장바구니 버튼 이동
+            $(document).on('click', '.cart-btn', function() {
+                location.href = 'cart.html';
+            });
+            // 바텀시트 내 바로구매 버튼 이동
+            $(document).on('click', '.purchase-btn-click', function() {
+                location.href = 'order.html';
+            });
         });
     </script>
+    <default-bottom></default-bottom>
+    <script src="common/default_header.js"></script>
+    <script src="common/default_bottom.js"></script>
 </body>
 
 </html>

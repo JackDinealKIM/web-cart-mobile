@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white min-h-screen w-full">
-    <default-header title="설정"></default-header>
+    <default-header title="설정" class="fixed top-0 left-0 w-full z-40"></default-header>
+    <div class="h-14"></div>
     <div class="w-full mx-auto flex flex-col items-center pt-8">
         <div class="flex flex-col items-center w-full">
             <div class="w-32 h-32 rounded-full bg-gray-300 mb-4 overflow-hidden flex items-center justify-center">
@@ -17,11 +18,21 @@
         </div>
         <hr class="w-full border-t border-gray-200 mb-6" />
         <ul class="w-full flex flex-col gap-6 px-8">
-            <li class="text-lg font-semibold text-gray-900 cursor-pointer">이용약관</li>
-            <li class="text-lg font-semibold text-gray-900 cursor-pointer">개인정보처리방침</li>
-            <li class="text-lg font-semibold text-gray-900 cursor-pointer">로그아웃</li>
+            <li id="link-terms" class="text-lg font-semibold text-gray-900 cursor-pointer">이용약관</li>
+            <li id="link-privacy" class="text-lg font-semibold text-gray-900 cursor-pointer">개인정보처리방침</li>
+            <li id="link-logout" class="text-lg font-semibold text-gray-900 cursor-pointer">로그아웃</li>
         </ul>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <default-bottom></default-bottom>
     <script src="common/default_header.js"></script>
+    <script src="common/default_bottom.js"></script>
+    <script>
+      $(function() {
+        $('#link-terms').on('click', function() { location.href = 'terms.html'; });
+        $('#link-privacy').on('click', function() { location.href = 'privacy.html'; });
+        $('#link-logout').on('click', function() { location.href = 'index.html'; });
+      });
+    </script>
 </body>
 </html> 

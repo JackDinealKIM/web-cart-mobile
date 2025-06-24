@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 주문내역</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-white min-h-screen w-full flex flex-col">
+  <default-header title="나의 주문내역" class="fixed top-0 left-0 w-full z-40"></default-header>
+  <div class="h-14"></div>
+  <div class="w-full max-w-xl mx-auto flex flex-col flex-1">
+    <!-- 상단 탭 -->
+    <div class="flex w-full border-b border-gray-200 mt-2">
+      <button class="order-tab flex-1 py-4 text-lg font-bold text-gray-400 border-b-2 border-transparent">주문 2</button>
+      <button class="order-tab flex-1 py-4 text-lg font-bold text-black border-b-2 border-black">취소 3</button>
+      <button class="order-tab flex-1 py-4 text-lg font-bold text-gray-400 border-b-2 border-transparent">완료 0</button>
+    </div>
+    <!-- 매장 선택 -->
+    <div class="px-4 pt-4">
+      <button class="flex items-center bg-cyan-50 text-gray-900 font-semibold px-4 py-2 rounded">천안 불당지웰시티점 <span class="ml-2">▼</span></button>
+    </div>
+    <!-- 주문 날짜/건수 -->
+    <div class="px-4 pt-6 pb-2 flex items-center">
+      <span class="text-xl font-bold mr-2">2025. 06. 12</span>
+      <span class="text-base text-gray-700">주문 3건</span>
+      <span class="ml-auto text-2xl text-gray-700 cursor-pointer">&#9650;</span>
+    </div>
+    <!-- 주문 요약 -->
+    <div class="px-4">
+      <div class="bg-gray-50 rounded-xl px-5 py-4 mb-4">
+        <div class="text-base font-bold mb-1">상품 금액 : <span class="font-normal">10,000원</span></div>
+        <div class="text-base font-bold mb-1">할인 금액 : <span class="font-normal">1,000원</span></div>
+        <div class="text-base font-bold mb-1">총 결제 금액 : <span class="font-normal">9,000원</span></div>
+        <div class="text-base font-bold">결제수단 : <span class="font-normal">카드</span></div>
+      </div>
+    </div>
+    <!-- 주문 상품 리스트 -->
+    <div class="flex flex-col gap-6 px-4 pb-8">
+      <!-- 상품 1 -->
+      <div class="flex gap-4 bg-white rounded-xl p-4 items-center">
+        <img src="https://picsum.photos/100/100?random=21" alt="달달맛밤" class="w-24 h-24 rounded-xl object-cover border" />
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="font-bold text-lg">달달맛밤</div>
+          <div class="text-gray-800 text-base">3,000원 / 2개</div>
+          <span class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1 w-fit"><img src="./images/location.png" width="14" class="mr-1"/>현장 수령</span>
+        </div>
+        <div class="flex flex-col gap-2 items-end ml-2">
+          <button class="border border-gray-300 rounded px-3 py-1 text-sm">주문 취소</button>
+          <div class="flex gap-2 mt-2">
+            <button class="order-status-btn bg-cyan-400 text-white rounded-full px-4 py-1 font-bold">수령</button>
+            <button class="order-status-btn bg-cyan-200 text-cyan-900 rounded-full px-4 py-1 font-bold">미수령</button>
+          </div>
+        </div>
+      </div>
+      <!-- 상품 2 -->
+      <div class="flex gap-4 bg-white rounded-xl p-4 items-center">
+        <img src="https://picsum.photos/100/100?random=22" alt="이고장 명품 전복죽" class="w-24 h-24 rounded-xl object-cover border" />
+        <div class="flex-1 min-w-0 flex flex-col gap-1">
+          <div class="font-bold text-lg">이고장 명품 전복죽</div>
+          <div class="text-gray-800 text-base">4,900원 / 1개</div>
+          <span class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1 w-fit"><img src="./images/location.png" width="14" class="mr-1"/>현장 수령</span>
+        </div>
+        <div class="flex flex-col gap-2 items-end ml-2">
+          <button class="border border-gray-300 rounded px-3 py-1 text-sm">주문 취소</button>
+          <div class="flex gap-2 mt-2">
+            <button class="order-status-btn bg-cyan-400 text-white rounded-full px-4 py-1 font-bold">수령</button>
+            <button class="order-status-btn bg-cyan-200 text-cyan-900 rounded-full px-4 py-1 font-bold">미수령</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <default-bottom></default-bottom>
+  <script src="common/default_header.js"></script>
+  <script src="common/default_bottom.js"></script>
+  <script>
+    $(function() {
+      // 탭 UI (실제 동작은 예시)
+      $('.order-tab').on('click', function() {
+        $('.order-tab').removeClass('text-black border-black').addClass('text-gray-400 border-transparent');
+        $(this).addClass('text-black border-black').removeClass('text-gray-400 border-transparent');
+      });
+      // 수령/미수령 버튼 토글
+      $('.order-status-btn').on('click', function() {
+        var $group = $(this).parent();
+        $group.find('.order-status-btn').removeClass('bg-cyan-400 text-white').addClass('bg-cyan-200 text-cyan-900');
+        $(this).addClass('bg-cyan-400 text-white').removeClass('bg-cyan-200 text-cyan-900');
+      });
+      // 주문취소 버튼 클릭 시(예시)
+      $('button:contains("주문 취소")').on('click', function() {
+        alert('주문이 취소되었습니다.');
+      });
+    });
+  </script>
+</body>
+</html> 
