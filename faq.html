@@ -90,12 +90,17 @@
             });
 
             // FAQ 질문 클릭 이벤트 (아코디언 토글)
-            $('.faq-q').on('click', function () {
-                // 1. 답변 영역을 즉시 토글합니다. (slideToggle -> toggle로 변경)
-                $(this).next('.faq-a').toggle(); // << 이 부분을 수정했습니다.
+            $('.faq-q').on('click', function() {
+                var answer = $(this).next('.faq-a');
+                var arrow = $(this).find('.faq-arrow');
 
-                // 2. 화살표 방향을 토글합니다.
-                $(this).find('.faq-arrow').toggleClass('rotate-180');
+                // Close other open answers and reset their arrows
+                $('.faq-a').not(answer).slideUp();
+                $('.faq-q').not($(this)).find('.faq-arrow').removeClass('rotate-180');
+
+                // Toggle the clicked answer and rotate its arrow
+                answer.slideToggle();
+                arrow.toggleClass('rotate-180');
             });
         });
     </script>
