@@ -10,23 +10,23 @@
 </head>
 
 <body class="bg-[#fff] min-h-screen w-full flex flex-col">
-    <header class="w-full flex items-center justify-between bg-[#0b4d47] px-4 py-3">
+    <header class="fixed top-0 left-0 w-full flex items-center justify-between bg-[#0b4d47] px-4 py-3 z-40">
         <img src="images/logo.png" alt="로고" class="w-12 h-12 object-contain" />
         <span class="flex-1 text-white text-lg font-bold text-center">천안 불당지웰시티점 <span
                 class="align-middle">▼</span></span>
         <div class="flex items-center gap-4 min-w-[110px] pr-2">
-            <button id="icon-faq" class="text-white focus:outline-none">
+            <button class="text-white focus:outline-none">
                 <img src="images/calendar.png" width="21px" height="21px" />
             </button>
-            <button id="icon-search" class="text-white focus:outline-none">
+            <button class="text-white focus:outline-none">
                 <img src="images/search.png" width="21px" height="21px" />
             </button>
-            <button id="icon-setting" class="text-white focus:outline-none">
+            <button class="text-white focus:outline-none">
                 <img src="images/setting.png" width="30px" height="30px" />
             </button>
         </div>
     </header>
-    <main class="flex-1 w-full mx-auto pb-24 p-5">
+    <main class="flex-1 w-full mx-auto pb-24 p-5 pt-[90px]">
         <div class="grid grid-cols-2 gap-x-4 gap-y-8">
             <!-- 상품 카드 예시 (반복) -->
             <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
