@@ -219,24 +219,40 @@
         <div class="w-full max-w-md mx-auto">
             <!-- 커스텀 옵션 선택 UI -->
             <div class="relative mb-4">
-                <div id="custom-select" class="border border-green-900 rounded-t-md px-4 py-4 flex items-center justify-between cursor-pointer select-none">
+                <div id="custom-select" class="border border-green-900 rounded-md px-4 py-4 flex items-center justify-between cursor-pointer select-none">
                     <span class="text-gray-800">옵션 선택</span>
                     <svg class="w-5 h-5 text-green-900 ml-2 transition-transform duration-200" id="custom-select-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
                 </div>
                 <ul id="custom-options" class="absolute left-0 right-0 bg-white border border-green-900 border-t-0 rounded-b-md shadow-lg z-10 hidden">
-                    <li class="px-3 py-3 hover:bg-green-50 cursor-pointer">
-                        <div id="custom-selected-info" class="border-green-900 rounded-b-md px-1 py-1 flex items-center justify-between">
-                            <span class="text-gray-800" id="selected-option-name">신발탈취제</span>
-                            <span class="text-gray-800 font-medium" id="selected-option-count">1개 (+4,900원)</span>
-                        </div>
-                    </li>
-                    <li class="px-4 py-3 hover:bg-green-50 cursor-pointer">
-                        <div id="custom-selected-info" class="border-green-900 rounded-b-md px-1 py-1 flex items-center justify-between">
-                            <span class="text-gray-800" id="selected-option-name">양말세트</span>
-                            <span class="text-gray-800 font-medium" id="selected-option-count">1개 (+6,900원)</span>
-                        </div>
-                    </li>
+                    <li class="px-4 py-3 hover:bg-green-50 cursor-pointer" data-name="신발탈취제" data-price="4900">신발탈취제</li>
+                    <li class="px-4 py-3 hover:bg-green-50 cursor-pointer" data-name="양말세트" data-price="6900">양말세트</li>
                 </ul>
+                <!-- 선택 옵션 정보/수량/금액 영역 -->
+                <div id="selected-option-box" class="bg-gray-50 border border-gray-100 rounded-md p-5 mt-3 flex flex-col gap-2 hidden">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-800 text-base font-medium"><span id="selected-option-label">옵션 선택 : 신발탈취제 1개</span></span>
+                        <button id="remove-option" class="text-gray-400 hover:text-gray-700 text-xl">&times;</button>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center border border-gray-300 rounded px-2 py-1">
+                            <button id="qty-minus" class="text-2xl px-2 text-gray-700 font-bold">-</button>
+                            <span id="option-qty" class="mx-2 text-base">1</span>
+                            <button id="qty-plus" class="text-2xl px-2 text-gray-700 font-bold">+</button>
+                        </div>
+                        <span class="ml-auto text-xl font-bold" id="option-price">4,900원</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 결제 방식 선택 -->
+            <div id="pay-method-box" class="flex items-center gap-6 mb-4 hidden">
+                <label class="flex items-center cursor-pointer select-none">
+                    <input type="checkbox" class="form-checkbox w-5 h-5 text-green-900 rounded mr-2" id="pay-cash" checked>
+                    <span class="text-lg font-medium">현장결제</span>
+                </label>
+                <label class="flex items-center cursor-pointer select-none">
+                    <input type="checkbox" class="form-checkbox w-5 h-5 text-green-900 rounded mr-2" id="pay-card">
+                    <span class="text-lg font-medium">카드결제</span>
+                </label>
             </div>
             <hr class="border-t border-gray-200" />
             <div class="flex justify-between items-center py-4">
@@ -252,6 +268,10 @@
 
     <script>
         $(function () {
+            var selectedOption = null;
+            var selectedPrice = 0;
+            var qty = 1;
+
             $('.purchase-btn').on('click', function (e) {
                 e.preventDefault();
                 $('#bottom-sheet-backdrop').removeClass('hidden');
@@ -270,25 +290,64 @@
                 closeBottomSheet();
             });
 
-            // 커스텀 옵션 드롭다운
+            // 옵션 드롭다운
             $('#custom-select').on('click', function() {
                 $('#custom-options').toggle();
                 $('#custom-select-arrow').toggleClass('rotate-180');
             });
             $('#custom-options li').on('click', function() {
-                var name = $(this).data('name');
-                var price = $(this).data('price');
-                $('#selected-option-name').text(name);
-                $('#selected-option-count').text('1개 (+' + price.toLocaleString() + '원)');
-                $('#total-price').text(price.toLocaleString() + '원');
+                selectedOption = $(this).data('name');
+                selectedPrice = $(this).data('price');
+                qty = 1;
+                $('#selected-option-label').text('옵션 선택 : ' + selectedOption + ' ' + qty + '개');
+                $('#option-qty').text(qty);
+                $('#option-price').text((selectedPrice * qty).toLocaleString() + '원');
+                $('#total-price').text((selectedPrice * qty).toLocaleString() + '원');
+                $('#selected-option-box').removeClass('hidden');
+                $('#pay-method-box').removeClass('hidden');
                 $('#custom-options').hide();
                 $('#custom-select-arrow').removeClass('rotate-180');
             });
-            // 바깥 클릭 시 닫기
+            // 수량 증가
+            $('#qty-plus').on('click', function() {
+                if (!selectedOption) return;
+                qty++;
+                $('#selected-option-label').text('옵션 선택 : ' + selectedOption + ' ' + qty + '개');
+                $('#option-qty').text(qty);
+                $('#option-price').text((selectedPrice * qty).toLocaleString() + '원');
+                $('#total-price').text((selectedPrice * qty).toLocaleString() + '원');
+            });
+            // 수량 감소
+            $('#qty-minus').on('click', function() {
+                if (!selectedOption) return;
+                if (qty > 1) {
+                    qty--;
+                    $('#selected-option-label').text('옵션 선택 : ' + selectedOption + ' ' + qty + '개');
+                    $('#option-qty').text(qty);
+                    $('#option-price').text((selectedPrice * qty).toLocaleString() + '원');
+                    $('#total-price').text((selectedPrice * qty).toLocaleString() + '원');
+                }
+            });
+            // 옵션 삭제
+            $('#remove-option').on('click', function() {
+                selectedOption = null;
+                selectedPrice = 0;
+                qty = 1;
+                $('#selected-option-box').addClass('hidden');
+                $('#total-price').text('0원');
+                $('#pay-method-box').addClass('hidden');
+            });
+            // 바깥 클릭 시 드롭다운 닫기
             $(document).on('mousedown', function(e) {
                 if (!$(e.target).closest('#custom-select, #custom-options').length) {
                     $('#custom-options').hide();
                     $('#custom-select-arrow').removeClass('rotate-180');
+                }
+            });
+            // 결제방식 체크박스 단일선택
+            $('#pay-cash, #pay-card').on('change', function() {
+                if ($(this).is(':checked')) {
+                    $('#pay-cash, #pay-card').not(this).prop('checked', false);
                 }
             });
         });
