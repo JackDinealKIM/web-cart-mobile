@@ -12,6 +12,16 @@
 <body class="bg-[#fff] min-h-screen w-full flex flex-col">
     <!-- header 복사 -->
     <default-header title="장바구니"></default-header>
+    <!-- 안내 박스 (상단) -->
+    <div class="flex justify-center w-full mt-6 mb-4">
+        <div class="bg-gray-100 rounded-2xl px-8 py-4 flex items-center gap-3 shadow max-w-xl w-full mx-4">
+            <span class="text-2xl"><img src="./images/notice.png" width="17px" height="17px" /></span>
+            <div class="text-gray-900 text-base">
+                <div>천안 불당지웰시티점 입니다.</div>
+                <div>주문은 오전 9시까지, 수령은 오후 8시까지 입니다.</div>
+            </div>
+        </div>
+    </div>
     <main class="flex-1 w-full mx-auto pb-24 p-4">
         <div class="mx-auto">
             <div class="flex items-center justify-between mt-4 mb-2">
@@ -31,8 +41,10 @@
                 <!-- 아이템 1 -->
                 <div class="cart-item-row">
                     <div class="flex items-start gap-4 w-full bg-white p-4 rounded-xl">
-                        <input type="checkbox" class="form-checkbox w-6 h-6 text-green-900 rounded cart-item-check mt-1">
-                        <img src="https://picsum.photos/300/400?random=11" class="aspect-square rounded object-cover border" width="100" height="100" />
+                        <input type="checkbox"
+                            class="form-checkbox w-6 h-6 text-green-900 rounded cart-item-check mt-1">
+                        <img src="https://picsum.photos/300/400?random=11"
+                            class="aspect-square rounded object-cover border" width="100" height="100" />
                         <div class="flex-1 min-w-0 flex flex-col gap-2">
                             <div class="flex items-start justify-between">
                                 <div>
@@ -40,17 +52,22 @@
                                     <div class="text-gray-800 text-base font-medium">이고장 명품 전복죽</div>
                                     <div class="text-gray-500 text-sm">4,900원 / 1개</div>
                                     <div class="text-gray-400 text-xs truncate">텍스트텍스트텍스트텍스트텍스트텍스트</div>
-                                    <span class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img src="./images/location.png" width="12" class="mr-1"/>현장 수령</span>
+                                    <span
+                                        class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img
+                                            src="./images/location.png" width="12" class="mr-1" />현장 수령</span>
                                 </div>
                                 <div class="flex flex-col items-end gap-2 ml-2">
                                     <span class="font-bold text-xl">4,900원</span>
-                                    <button class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
+                                    <button
+                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2 mt-2 justify-end">
-                                <button class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
+                                <button
+                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
                                 <span class="w-8 text-center" id="cart-qty-1">1</span>
-                                <button class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
+                                <button
+                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
                             </div>
                         </div>
                     </div>
@@ -59,8 +76,10 @@
                 <!-- 아이템 2 -->
                 <div class="cart-item-row">
                     <div class="flex items-start gap-4 w-full bg-white p-4 rounded-xl">
-                        <input type="checkbox" class="form-checkbox w-6 h-6 text-green-900 rounded cart-item-check mt-1">
-                        <img src="https://picsum.photos/300/400?random=12" class="aspect-square rounded object-cover border" width="100" height="100" />
+                        <input type="checkbox"
+                            class="form-checkbox w-6 h-6 text-green-900 rounded cart-item-check mt-1">
+                        <img src="https://picsum.photos/300/400?random=12"
+                            class="aspect-square rounded object-cover border" width="100" height="100" />
                         <div class="flex-1 min-w-0 flex flex-col gap-2">
                             <div class="flex items-start justify-between">
                                 <div>
@@ -68,17 +87,22 @@
                                     <div class="text-gray-800 text-base font-medium">달달맛밤</div>
                                     <div class="text-gray-500 text-sm">3,000원 / 2개</div>
                                     <div class="text-gray-400 text-xs truncate">텍스트텍스트텍스트텍스트텍스트텍스트</div>
-                                    <span class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img src="./images/location.png" width="12" class="mr-1"/>현장 수령</span>
+                                    <span
+                                        class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img
+                                            src="./images/location.png" width="12" class="mr-1" />현장 수령</span>
                                 </div>
                                 <div class="flex flex-col items-end gap-2 ml-2">
                                     <span class="font-bold text-xl">3,000원</span>
-                                    <button class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
+                                    <button
+                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
                                 </div>
                             </div>
                             <div class="flex items-center gap-2 mt-2 justify-end">
-                                <button class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
+                                <button
+                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
                                 <span class="w-8 text-center" id="cart-qty-2">2</span>
-                                <button class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
+                                <button
+                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
                             </div>
                         </div>
                     </div>
@@ -86,7 +110,7 @@
             </div>
         </div>
     </main>
-    <!-- 하단 네비게이션 복사 -->
+    <!-- 하단 네비게이션 -->
     <nav
         class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex justify-center items-center px-0 py-3 z-10">
         <button class="flex-1 flex flex-col items-center text-gray-700 focus:outline-none">
@@ -102,31 +126,46 @@
             <img src="./images/my.png" width="28px" height="28px" />
         </button>
     </nav>
+    <!-- 총 금액/결제하기 UI -->
+    <div id="cart-total-bar" class="fixed left-0 right-0 bottom-0 bg-white z-30 border-t border-gray-200 px-4 py-6 hidden">
+        <div class="max-w-xl mx-auto">
+            <div class="flex items-center justify-between mb-6">
+                <span class="text-xl font-bold">총 금액</span>
+                <span class="text-xl font-bold" id="cart-total-price">0원</span>
+            </div>
+            <button class="w-full bg-[#054944] text-white text-lg font-bold py-4 rounded-xl">결제하기</button>
+        </div>
+    </div>
     <script src="common/default_header.js"></script>
     <script>
         $(function () {
             // 전체 선택
             $('#cart-all').on('change', function () {
                 $('.cart-item-check').prop('checked', $(this).is(':checked'));
+                updateCartTotalBar();
             });
             // 개별 체크박스 변경 시 전체선택 체크 상태 동기화
             $('.cart-item-check').on('change', function () {
                 $('#cart-all').prop('checked', $('.cart-item-check:checked').length === $('.cart-item-check').length);
+                updateCartTotalBar();
             });
             // 수량 증가/감소
             $('.cart-qty-plus').on('click', function () {
                 var $qty = $(this).siblings('span');
                 var val = parseInt($qty.text());
                 $qty.text(val + 1);
+                updateCartTotalBar();
             });
             $('.cart-qty-minus').on('click', function () {
                 var $qty = $(this).siblings('span');
                 var val = parseInt($qty.text());
                 if (val > 1) $qty.text(val - 1);
+                updateCartTotalBar();
             });
             // 아이템 삭제
             $('.cart-item-remove').on('click', function () {
                 $(this).closest('.cart-item-row').remove();
+                updateCartTotalBar();
             });
             // 선택 삭제
             $('#cart-delete-selected').on('click', function () {
@@ -135,7 +174,28 @@
                 if ($('.cart-item-check').length === 0) {
                     $('#cart-all').prop('checked', false);
                 }
+                updateCartTotalBar();
             });
+            // 총 금액/결제 UI 업데이트 함수
+            function updateCartTotalBar() {
+                var total = 0;
+                $('.cart-item-check:checked').each(function() {
+                    var $row = $(this).closest('.cart-item-row');
+                    // 금액, 수량 추출
+                    var priceText = $row.find('.font-bold.text-xl').first().text().replace(/[^\d]/g, '');
+                    var qty = parseInt($row.find('span[id^="cart-qty-"]').text());
+                    var price = parseInt(priceText) || 0;
+                    total += price * (qty || 1);
+                });
+                if ($('.cart-item-check:checked').length > 0) {
+                    $('#cart-total-bar').removeClass('hidden');
+                    $('#cart-total-price').text(total.toLocaleString() + '원');
+                } else {
+                    $('#cart-total-bar').addClass('hidden');
+                }
+            }
+            // 페이지 진입 시 초기화
+            updateCartTotalBar();
         });
     </script>
 </body>
