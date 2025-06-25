@@ -13,8 +13,17 @@
 <body class="bg-[#fff] min-h-screen w-full flex flex-col">
     <header class="fixed top-0 left-0 w-full flex items-center justify-between bg-[#0b4d47] px-4 py-3 z-40">
         <img src="images/logo.png" alt="로고" class="w-12 h-12 object-contain" />
-        <span class="flex-1 text-white text-sm font-bold text-center">천안 불당지웰시티점 <span
-                class="align-middle">▼</span></span>
+        <div class="relative flex-1">
+            <button id="main-store-dropdown-btn" type="button" class="w-full flex items-center justify-center text-white text-sm font-bold text-center focus:outline-none">
+                <span id="main-store-dropdown-label">천안 불당지웰시티점</span>
+                <span class="align-middle ml-1">▼</span>
+            </button>
+            <ul id="main-store-dropdown-list" class="absolute left-1/2 -translate-x-1/2 mt-2 w-44 bg-white border border-green-900 rounded shadow-lg z-50 hidden">
+                <li class="px-4 py-2 hover:bg-green-50 cursor-pointer text-gray-900" data-store="천안 불당지웰시티점">천안 불당지웰시티점</li>
+                <li class="px-4 py-2 hover:bg-green-50 cursor-pointer text-gray-900" data-store="서울 강남점">서울 강남점</li>
+                <li class="px-4 py-2 hover:bg-green-50 cursor-pointer text-gray-900" data-store="대전 둔산점">대전 둔산점</li>
+            </ul>
+        </div>
         <div class="flex items-center gap-2 min-w-[56px] pr-1">
             <button id="calendar-btn" class="text-white focus:outline-none">
                 <img src="images/calendar.png" width="21px" height="21px" />
@@ -97,36 +106,34 @@
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
-                    <div class="relative aspect-[3/4] w-full">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                    <div class="relative aspect-[3/4] w-full bg-black bg-opacity-70">
+                        <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center rounded-t-xl z-100">
+                        </div>
                         <img src="https://picsum.photos/300/400?random=7" alt="신발탈취제"
-                            class="w-full h-full object-cover rounded-t-xl" />
+                            class="w-full h-full object-cover rounded-t-xl z-11" />
 
                         <div
                             class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
-                            <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
+                            <span class="flex-1 bg-black/70 px-3 py-2 text-left z-11">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
-                        <span
+                        <!-- <span
                             class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
                             <img src="./images/location.png" width="12px" height="12px" />
                             <span>현장 수령</span>
-                        </span>
-                        <span
+                        </span> -->
+                        <!-- <span
                             class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
                         <span
-                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span> -->
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
                     <div class="text-[10px] font-medium text-gray-900">신발탈취제</div>
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
-                    <div class="flex gap-0.5 mt-auto">
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button
-                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
-                    </div>
+                    <div class="w-full bg-gray-400 text-white text-center rounded py-1 text-sm text-base select-none cursor-not-allowed">다 팔렸어요</div>
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
@@ -375,6 +382,22 @@
                 // 버튼 클릭 시에는 무시 (장바구니/구매하기 버튼)
                 if ($(e.target).closest('button').length === 0) {
                     location.href = 'cart.html';
+                }
+            });
+
+            // 메인 헤더 매장 드롭다운
+            $('#main-store-dropdown-btn').on('click', function(e) {
+                e.stopPropagation();
+                $('#main-store-dropdown-list').toggle();
+            });
+            $('#main-store-dropdown-list li').on('click', function() {
+                var store = $(this).data('store');
+                $('#main-store-dropdown-label').text(store);
+                $('#main-store-dropdown-list').hide();
+            });
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#main-store-dropdown-btn, #main-store-dropdown-list').length) {
+                    $('#main-store-dropdown-list').hide();
                 }
             });
         });
