@@ -11,8 +11,29 @@
     <default-header title="이고장 명품 전복죽" showCart="true" showHome="true" class="fixed top-0 left-0 w-full z-40"></default-header>
     <div class="h-14"></div>
     <!-- 상단 상품 이미지 -->
-    <div class="w-full bg-gray-100 flex items-center justify-center overflow-hidden h-[40vh] max-h-[550px]">
-        <img src="https://picsum.photos/600/400?random=11" alt="이고장 명품 전복죽" class="w-full h-full object-cover" />
+    <div class="w-full bg-gray-100 flex items-center justify-center overflow-hidden h-[40vh] max-h-[550px] relative">
+        <div id="order-carousel" class="w-full h-full relative">
+            <div class="w-full h-full overflow-hidden relative">
+                <div class="flex transition-transform duration-300 h-full" style="width: 500%;" id="carousel-track">
+                    <img src="https://picsum.photos/1024/1024?random=11" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                    <img src="https://picsum.photos/1024/1024?random=12" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                    <img src="https://picsum.photos/1024/1024?random=13" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                    <img src="https://picsum.photos/1024/1024?random=14" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                    <img src="https://picsum.photos/1024/1024?random=15" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                </div>
+                <!-- 좌우 화살표 -->
+                <button id="carousel-prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black bg-opacity-30 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"><span class="text-xl">&#8592;</span></button>
+                <button id="carousel-next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black bg-opacity-30 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"><span class="text-xl">&#8594;</span></button>
+                <!-- 인디케이터 -->
+                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
+                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
+                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
+                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
+                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
+                </div>
+            </div>
+        </div>
     </div>
     <main class="flex-1 w-full max-w-xl mx-auto px-4 pb-32">
         <!-- 상품명/가격 -->
@@ -31,7 +52,47 @@
         <!-- 상품정보 -->
         <div class="border-t border-gray-200 pt-6 pb-2 mt-6">
             <div class="text-xs font-bold mb-1">상품정보</div>
-            <div class="bg-cyan-50 rounded-xl px-4 py-2 text-xs">6월 11일 / 11시 이후</div>
+            <div class="bg-cyan-50 rounded-xl px-4 py-2 text-xs">
+                이 상품은 신선한 재료로 만들어집니다.<br>
+                - 원산지: 국내산<br>
+                - 유통기한: 제조일로부터 7일<br>
+                - 보관방법: 냉장보관(0~10도)<br>
+                <br>
+                본 상품은 엄선된 재료만을 사용하여 정성스럽게 만들어졌습니다. 신선도 유지를 위해 주문 후 바로 제조되며, 고객님께 최고의 맛과 품질을 제공하기 위해 항상 노력하고 있습니다. <br>
+                <br>
+                제품의 특성상 주문 후에는 취소 및 변경이 어려우니 신중한 구매 부탁드립니다. 수령 후에는 반드시 냉장 보관해 주시고, 가급적 빠른 시일 내에 섭취해 주세요. <br>
+                <br>
+                추가 안내사항<br>
+                1. 본 상품은 주문 후 취소가 불가합니다.<br>
+                2. 상품 수령 후에는 교환/환불이 어렵습니다.<br>
+                3. 기타 문의사항은 고객센터로 연락 바랍니다.<br>
+                <br>
+                ※ 알레르기 유발 성분이 포함되어 있을 수 있으니, 성분표를 꼭 확인해 주세요.<br>
+                ※ 사진은 연출된 이미지로 실제와 다를 수 있습니다.<br>
+                <br>
+                상품에 대한 자세한 정보는 아래를 참고해 주세요.<br>
+                - 제조사: 이고장푸드<br>
+                - 고객센터: 1588-0000<br>
+                - 주소: 서울특별시 강남구 테헤란로 123<br>
+                <br>
+                본 제품은 HACCP 인증을 받은 시설에서 위생적으로 생산됩니다. <br>
+                <br>
+                추가로, 고객님의 소중한 의견을 반영하여 더 나은 상품과 서비스를 제공할 수 있도록 항상 최선을 다하겠습니다. <br>
+                <br>
+                상품에 대한 문의, 불편사항, 개선 요청 등은 언제든 고객센터로 연락 주시면 신속하게 안내해 드리겠습니다.<br>
+                <br>
+                감사합니다. 좋은 하루 되세요!<br>
+                <br>
+                ※ 본 상품은 한정 수량으로 조기 품절될 수 있습니다. 구매를 원하시는 경우 빠른 주문을 권장드립니다.<br>
+                <br>
+                - 상품명: 이고장 명품 전복죽<br>
+                - 중량: 300g<br>
+                - 주요성분: 전복, 쌀, 참기름, 소금 등<br>
+                <br>
+                본 상품은 가족, 친구, 지인 등 소중한 분들과 함께 나누기에 좋은 프리미엄 제품입니다. <br>
+                <br>
+                앞으로도 많은 관심과 사랑 부탁드립니다.<br>
+            </div>
         </div>
         <!-- 하단 버튼 -->
         <div class="fixed left-0 right-0 bottom-0 bg-white z-30 px-4 pb-6 pt-4 flex gap-4 max-w-xl mx-auto">
@@ -69,6 +130,50 @@
             setTimeout(function() { toast.remove(); location.href = 'my_order.html'; }, 300);
           }, 1000);
         });
+
+        // 캐러셀 기능
+        var current = 0;
+        var total = 5;
+        function updateCarousel() {
+          $('#carousel-track').css('transform', 'translateX(' + (-100 * current) + '%)');
+          $('.carousel-dot').removeClass('bg-green-900 opacity-100').addClass('bg-white opacity-70');
+          $('.carousel-dot').eq(current).removeClass('bg-white opacity-70').addClass('bg-green-900 opacity-100');
+        }
+        $('#carousel-prev').on('click', function() {
+          current = (current - 1 + total) % total;
+          updateCarousel();
+        });
+        $('#carousel-next').on('click', function() {
+          current = (current + 1) % total;
+          updateCarousel();
+        });
+        $('.carousel-dot').on('click', function() {
+          current = $(this).index();
+          updateCarousel();
+        });
+        // 모바일 스와이프 지원
+        var startX = 0, endX = 0;
+        $('#order-carousel')[0].addEventListener('touchstart', function(e) {
+          startX = e.touches[0].clientX;
+        });
+        $('#order-carousel')[0].addEventListener('touchmove', function(e) {
+          endX = e.touches[0].clientX;
+        });
+        $('#order-carousel')[0].addEventListener('touchend', function(e) {
+          if (startX && endX) {
+            var diff = startX - endX;
+            if (Math.abs(diff) > 40) {
+              if (diff > 0) { // left swipe
+                current = (current + 1) % total;
+              } else { // right swipe
+                current = (current - 1 + total) % total;
+              }
+              updateCarousel();
+            }
+          }
+          startX = 0; endX = 0;
+        });
+        updateCarousel();
       });
     </script>
 </body>

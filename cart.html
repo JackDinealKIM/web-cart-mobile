@@ -26,9 +26,17 @@
     <main class="flex-1 w-full mx-auto pb-24 p-4">
         <div class="mx-auto">
             <div class="flex items-center justify-between mt-1 mb-2">
-                <button class="flex items-center bg-green-50 text-green-900 font-semibold px-4 py-2 rounded">
-                    천안 불당지웰시티점 <span class="ml-2">▼</span>
-                </button>
+                <div class="relative">
+                    <button id="store-dropdown-btn" type="button" class="flex items-center bg-green-50 text-green-900 font-semibold px-4 py-2 rounded w-48 justify-between">
+                        <span id="store-dropdown-label">천안 불당지웰시티점</span>
+                        <span class="ml-2">▼</span>
+                    </button>
+                    <ul id="store-dropdown-list" class="absolute left-0 mt-1 w-48 bg-white border border-green-900 rounded shadow-lg z-20 hidden">
+                        <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="천안 불당지웰시티점">천안 불당지웰시티점</li>
+                        <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="서울 강남점">서울 강남점</li>
+                        <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="대전 둔산점">대전 둔산점</li>
+                    </ul>
+                </div>
             </div>
             <div class="flex items-center gap-1 mb-1">
                 <input type="checkbox" id="cart-all" class="form-checkbox w-4 h-4 text-green-900 rounded">
@@ -194,6 +202,22 @@
             // btn-order 클릭 시 order.html 이동
             $(document).on('click', '.btn-order', function () {
                 location.href = 'order.html';
+            });
+
+            // 매장 드롭다운
+            $('#store-dropdown-btn').on('click', function(e) {
+                e.stopPropagation();
+                $('#store-dropdown-list').toggle();
+            });
+            $('#store-dropdown-list li').on('click', function() {
+                var store = $(this).data('store');
+                $('#store-dropdown-label').text(store);
+                $('#store-dropdown-list').hide();
+            });
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('#store-dropdown-btn, #store-dropdown-list').length) {
+                    $('#store-dropdown-list').hide();
+                }
             });
         });
     </script>
