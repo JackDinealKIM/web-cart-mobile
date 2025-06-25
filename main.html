@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>메인</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -30,24 +31,26 @@
         <div class="grid grid-cols-2 gap-x-2 gap-y-4">
             <!-- 상품 카드 예시 (반복) -->
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
                     <div class="relative aspect-[3/4] w-full">
                         <img src="https://picsum.photos/300/400?random=5" alt="신발탈취제"
-                             class="w-full h-full object-cover rounded-t-xl"/>
+                            class="w-full h-full object-cover rounded-t-xl" />
 
-                        <div class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
                             <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
-                        <span
+                        <!-- <span
                                 class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
                         <img src="./images/location.png" width="12px" height="12px"/>
-                        <span>현장 수령</span>
-                    </span>
-                        <span class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <span>현장 수령</span> -->
+                        </span>
                         <span
-                                class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <!-- <span
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span> -->
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
@@ -55,29 +58,32 @@
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
                     <div class="flex gap-0.5 mt-auto">
                         <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
+                        <button
+                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
                     <div class="relative aspect-[3/4] w-full">
-                        <img src="https://picsum.photos/300/400?random=5" alt="신발탈취제"
-                             class="w-full h-full object-cover rounded-t-xl"/>
+                        <img src="https://picsum.photos/300/400?random=6" alt="신발탈취제"
+                            class="w-full h-full object-cover rounded-t-xl" />
 
-                        <div class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
                             <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
                         <span
-                                class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                        <img src="./images/location.png" width="12px" height="12px"/>
-                        <span>현장 수령</span>
-                    </span>
-                        <span class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                            class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                            <img src="./images/location.png" width="12px" height="12px" />
+                            <span>현장 수령</span>
+                        </span>
                         <span
-                                class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <span
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
@@ -85,29 +91,32 @@
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
                     <div class="flex gap-0.5 mt-auto">
                         <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
+                        <button
+                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
                     <div class="relative aspect-[3/4] w-full">
-                        <img src="https://picsum.photos/300/400?random=5" alt="신발탈취제"
-                             class="w-full h-full object-cover rounded-t-xl"/>
+                        <img src="https://picsum.photos/300/400?random=7" alt="신발탈취제"
+                            class="w-full h-full object-cover rounded-t-xl" />
 
-                        <div class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
                             <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
                         <span
-                                class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                        <img src="./images/location.png" width="12px" height="12px"/>
-                        <span>현장 수령</span>
-                    </span>
-                        <span class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                            class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                            <img src="./images/location.png" width="12px" height="12px" />
+                            <span>현장 수령</span>
+                        </span>
                         <span
-                                class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <span
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
@@ -115,29 +124,32 @@
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
                     <div class="flex gap-0.5 mt-auto">
                         <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
+                        <button
+                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
                     <div class="relative aspect-[3/4] w-full">
-                        <img src="https://picsum.photos/300/400?random=5" alt="신발탈취제"
-                             class="w-full h-full object-cover rounded-t-xl"/>
+                        <img src="https://picsum.photos/300/400?random=8" alt="신발탈취제"
+                            class="w-full h-full object-cover rounded-t-xl" />
 
-                        <div class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
                             <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
                         <span
-                                class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                        <img src="./images/location.png" width="12px" height="12px"/>
-                        <span>현장 수령</span>
-                    </span>
-                        <span class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                            class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                            <img src="./images/location.png" width="12px" height="12px" />
+                            <span>현장 수령</span>
+                        </span>
                         <span
-                                class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <span
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
@@ -145,29 +157,32 @@
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
                     <div class="flex gap-0.5 mt-auto">
                         <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
+                        <button
+                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
             <div class="bg-white rounded shadow-sm overflow-hidden flex flex-col">
-                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col">
+                <div class="bg-white rounded-xl shadow overflow-hidden flex flex-col card-link">
                     <div class="relative aspect-[3/4] w-full">
-                        <img src="https://picsum.photos/300/400?random=5" alt="신발탈취제"
-                             class="w-full h-full object-cover rounded-t-xl"/>
+                        <img src="https://picsum.photos/300/400?random=9" alt="신발탈취제"
+                            class="w-full h-full object-cover rounded-t-xl" />
 
-                        <div class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 flex items-center text-white text-[10px] font-bold">
                             <span class="flex-1 bg-black/70 px-3 py-2 text-left">6월 11일 / 11시 이후</span>
                             <span class="bg-red-500 px-3 py-2">픽업가능</span>
                         </div>
 
                         <span
-                                class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                        <img src="./images/location.png" width="12px" height="12px"/>
-                        <span>현장 수령</span>
-                    </span>
-                        <span class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                            class="absolute bottom-10 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                            <img src="./images/location.png" width="12px" height="12px" />
+                            <span>현장 수령</span>
+                        </span>
                         <span
-                                class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
+                            class="absolute top-2 left-2 bg-yellow-300 text-xs font-semibold px-2 py-1 rounded">이벤트</span>
+                        <span
+                            class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold w-8 h-8 flex items-center justify-center rounded-full">SALE</span>
                     </div>
                 </div>
                 <div class="p-1 flex-1 flex flex-col">
@@ -175,7 +190,8 @@
                     <div class="text-xs font-bold mt-0.5 mb-0.5">4,900원</div>
                     <div class="flex gap-0.5 mt-auto">
                         <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] cart-btn">장바구니</button>
-                        <button class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
+                        <button
+                            class="flex-1 border border-gray-300 rounded py-0.5 text-[10px] purchase-btn">구매하기</button>
                     </div>
                 </div>
             </div>
@@ -188,18 +204,26 @@
         <div class="w-full max-w-md mx-auto">
             <!-- 커스텀 옵션 선택 UI -->
             <div class="relative mb-4">
-                <div id="custom-select" class="border border-green-900 rounded-md px-4 py-4 flex items-center justify-between cursor-pointer select-none">
+                <div id="custom-select"
+                    class="border border-green-900 rounded-md px-4 py-4 flex items-center justify-between cursor-pointer select-none">
                     <span class="text-gray-800">옵션 선택</span>
-                    <svg class="w-5 h-5 text-green-900 ml-2 transition-transform duration-200" id="custom-select-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                    <svg class="w-5 h-5 text-green-900 ml-2 transition-transform duration-200" id="custom-select-arrow"
+                        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
                 </div>
-                <ul id="custom-options" class="absolute left-0 right-0 bg-white border border-green-900 border-t-0 rounded-b-md shadow-lg z-10 hidden">
-                    <li class="px-4 py-3 hover:bg-green-50 cursor-pointer" data-name="신발탈취제" data-price="4900">신발탈취제</li>
+                <ul id="custom-options"
+                    class="absolute left-0 right-0 bg-white border border-green-900 border-t-0 rounded-b-md shadow-lg z-10 hidden">
+                    <li class="px-4 py-3 hover:bg-green-50 cursor-pointer" data-name="신발탈취제" data-price="4900">신발탈취제
+                    </li>
                     <li class="px-4 py-3 hover:bg-green-50 cursor-pointer" data-name="양말세트" data-price="6900">양말세트</li>
                 </ul>
                 <!-- 선택 옵션 정보/수량/금액 영역 -->
-                <div id="selected-option-box" class="bg-gray-50 border border-gray-100 rounded-md p-5 mt-3 flex flex-col gap-2 hidden">
+                <div id="selected-option-box"
+                    class="bg-gray-50 border border-gray-100 rounded-md p-5 mt-3 flex flex-col gap-2 hidden">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-gray-800 text-base font-medium"><span id="selected-option-label">옵션 선택 : 신발탈취제 1개</span></span>
+                        <span class="text-gray-800 text-base font-medium"><span id="selected-option-label">옵션 선택 : 신발탈취제
+                                1개</span></span>
                         <button id="remove-option" class="text-gray-400 hover:text-gray-700 text-xl">&times;</button>
                     </div>
                     <div class="flex items-center gap-3">
@@ -215,7 +239,8 @@
             <!-- 결제 방식 선택 -->
             <div id="pay-method-box" class="flex items-center gap-6 mb-4 hidden">
                 <label class="flex items-center cursor-pointer select-none">
-                    <input type="checkbox" class="form-checkbox w-5 h-5 text-green-900 rounded mr-2" id="pay-cash" checked>
+                    <input type="checkbox" class="form-checkbox w-5 h-5 text-green-900 rounded mr-2" id="pay-cash"
+                        checked>
                     <span class="text-lg font-medium">현장결제</span>
                 </label>
                 <label class="flex items-center cursor-pointer select-none">
@@ -229,8 +254,10 @@
                 <span class="text-xl font-bold" id="total-price">4,900원</span>
             </div>
             <div class="flex gap-3 mt-2">
-                <button class="flex-1 bg-white border border-green-900 text-green-900 rounded-lg py-3 font-bold cart-btn">장바구니</button>
-                <button class="flex-1 bg-[#0b4d47] text-white rounded-lg py-3 font-bold purchase-btn-click">바로구매</button>
+                <button
+                    class="flex-1 bg-white border border-green-900 text-green-900 rounded-lg py-3 font-bold cart-btn">장바구니</button>
+                <button
+                    class="flex-1 bg-[#0b4d47] text-white rounded-lg py-3 font-bold purchase-btn-click">바로구매</button>
             </div>
         </div>
     </div>
@@ -260,11 +287,11 @@
             });
 
             // 옵션 드롭다운
-            $('#custom-select').on('click', function() {
+            $('#custom-select').on('click', function () {
                 $('#custom-options').toggle();
                 $('#custom-select-arrow').toggleClass('rotate-180');
             });
-            $('#custom-options li').on('click', function() {
+            $('#custom-options li').on('click', function () {
                 selectedOption = $(this).data('name');
                 selectedPrice = $(this).data('price');
                 qty = 1;
@@ -278,7 +305,7 @@
                 $('#custom-select-arrow').removeClass('rotate-180');
             });
             // 수량 증가
-            $('#qty-plus').on('click', function() {
+            $('#qty-plus').on('click', function () {
                 if (!selectedOption) return;
                 qty++;
                 $('#selected-option-label').text('옵션 선택 : ' + selectedOption + ' ' + qty + '개');
@@ -287,7 +314,7 @@
                 $('#total-price').text((selectedPrice * qty).toLocaleString() + '원');
             });
             // 수량 감소
-            $('#qty-minus').on('click', function() {
+            $('#qty-minus').on('click', function () {
                 if (!selectedOption) return;
                 if (qty > 1) {
                     qty--;
@@ -298,7 +325,7 @@
                 }
             });
             // 옵션 삭제
-            $('#remove-option').on('click', function() {
+            $('#remove-option').on('click', function () {
                 selectedOption = null;
                 selectedPrice = 0;
                 qty = 1;
@@ -307,40 +334,48 @@
                 $('#pay-method-box').addClass('hidden');
             });
             // 바깥 클릭 시 드롭다운 닫기
-            $(document).on('mousedown', function(e) {
+            $(document).on('mousedown', function (e) {
                 if (!$(e.target).closest('#custom-select, #custom-options').length) {
                     $('#custom-options').hide();
                     $('#custom-select-arrow').removeClass('rotate-180');
                 }
             });
             // 결제방식 체크박스 단일선택
-            $('#pay-cash, #pay-card').on('change', function() {
+            $('#pay-cash, #pay-card').on('change', function () {
                 if ($(this).is(':checked')) {
                     $('#pay-cash, #pay-card').not(this).prop('checked', false);
                 }
             });
 
-            $('#icon-faq').on('click', function() { location.href = 'faq.html'; });
-            $('#icon-search').on('click', function() { location.href = 'search.html'; });
-            $('#icon-setting').on('click', function() { location.href = 'setting.html'; });
+            $('#icon-faq').on('click', function () { location.href = 'faq.html'; });
+            $('#icon-search').on('click', function () { location.href = 'search.html'; });
+            $('#icon-setting').on('click', function () { location.href = 'setting.html'; });
 
             // 상품 카드 내 장바구니 버튼 이동
-            $(document).on('click', '.cart-btn', function() {
+            $(document).on('click', '.cart-btn', function () {
                 location.href = 'cart.html';
             });
             // 바텀시트 내 바로구매 버튼 이동
-            $(document).on('click', '.purchase-btn-click', function() {
+            $(document).on('click', '.purchase-btn-click', function () {
                 location.href = 'order.html';
             });
 
-            $('#calendar-btn').on('click', function() {
+            $('#calendar-btn').on('click', function () {
                 location.href = 'cart.html';
             });
-            $('#search-btn').on('click', function() {
+            $('#search-btn').on('click', function () {
                 location.href = 'search.html';
             });
-            $('#setting-btn').on('click', function() {
+            $('#setting-btn').on('click', function () {
                 location.href = 'setting.html';
+            });
+
+            // 카드 클릭 시 cart.html 이동
+            $(document).on('click', '.card-link', function (e) {
+                // 버튼 클릭 시에는 무시 (장바구니/구매하기 버튼)
+                if ($(e.target).closest('button').length === 0) {
+                    location.href = 'cart.html';
+                }
             });
         });
     </script>
