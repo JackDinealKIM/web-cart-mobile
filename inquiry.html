@@ -6,14 +6,90 @@
     <title>1:1 상담</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white min-h-screen w-full">
-    <default-header title="1:1 상담"></default-header>
-    <div class="w-full mx-auto">
+<body class="bg-white min-h-screen w-full flex flex-col pt-14">
+    <default-header title="1:1 상담" class="fixed top-0 left-0 w-full z-40"></default-header>
+    <div class="w-full mx-auto flex-1 flex flex-col">
         <div class="flex gap-2 pt-3 px-3 w-full">
-            <button class="flex-1 h-8 rounded-lg border border-green-900 text-[12px] font-bold transition-colors bg-white text-green-900">상담내역</button>
-            <button class="flex-1 h-8 rounded-lg border border-green-900 text-[12px] font-bold transition-colors bg-green-900 text-white">1:1 상담문의</button>
+            <button id="tab-history" class="flex-1 h-8 rounded-lg border border-green-900 text-[12px] font-bold transition-colors bg-white text-green-900">상담내역</button>
+            <button id="tab-inquiry" class="flex-1 h-8 rounded-lg border border-green-900 text-[12px] font-bold transition-colors bg-green-900 text-white">1:1 상담문의</button>
         </div>
-        <form class="w-full flex flex-col gap-5 mt-5 px-3">
+        <!-- 상담내역(FAQ) 탭 내용 -->
+        <div id="tab-history-content" class="hidden px-3 pt-4 pb-20">
+            <ul class="flex flex-col gap-3 w-full">
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">ID와 비밀번호 찾기는 어떻게 하나요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        APP 접속 화면에서 ID/PW 찾기를 통해 회원가입 시 인증한 대표자의 휴대폰번호 인증 후 ID는 암호화되어 제공되며, PW는 재설정하실 수 있습니다.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">비밀번호 변경은 어떻게 하나요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        APP에서 비밀번호 변경 메뉴를 이용하세요.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">추가 ID 발급이 가능한가요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        관리자에게 문의해 주세요.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">비밀번호가 5회 틀렸습니다. 어떻게 해야하나요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        고객센터로 연락해 주세요.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">비밀번호 변경은 어떻게 하나요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        APP에서 비밀번호 변경 메뉴를 이용하세요.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">추가 ID 발급이 가능한가요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        관리자에게 문의해 주세요.
+                    </div>
+                </li>
+                <li class="faq-item bg-gray-50 rounded-xl px-5 py-4 w-full">
+                    <div class="faq-q flex items-center gap-2 min-h-12 cursor-pointer text-[14px] font-bold text-gray-900 w-full">
+                        <span class="text-green-700 font-bold text-[14px]">Q.</span>
+                        <span class="flex-1 text-[14px]">비밀번호가 5회 틀렸습니다. 어떻게 해야하나요?</span>
+                        <span class="faq-arrow text-gray-400 ml-2 transition-transform text-[14px]">▼</span>
+                    </div>
+                    <div class="faq-a text-gray-700 mt-2 ml-7 hidden text-[14px]">
+                        고객센터로 연락해 주세요.
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 1:1 상담문의 탭 내용 (기존 form) -->
+        <form id="tab-inquiry-content" class="w-full flex flex-col gap-5 mt-5 px-3 flex-1 overflow-y-auto pb-20">
             <div>
                 <label class="block text-sm font-bold text-gray-900 mb-1.5">상담유형<span class="text-red-500 ml-1">*</span></label>
                 <div class="flex gap-3">
@@ -55,6 +131,33 @@
       var $count = $('.inquiry-text-count');
       $textarea.on('input', function() {
         $count.text($(this).val().length);
+      });
+
+      // 탭 전환 기능
+      $('#tab-history').on('click', function() {
+        $('#tab-history').addClass('bg-green-900 text-white').removeClass('bg-white text-green-900');
+        $('#tab-inquiry').addClass('bg-white text-green-900').removeClass('bg-green-900 text-white');
+        $('#tab-history-content').show();
+        $('#tab-inquiry-content').hide();
+      });
+      $('#tab-inquiry').on('click', function() {
+        $('#tab-inquiry').addClass('bg-green-900 text-white').removeClass('bg-white text-green-900');
+        $('#tab-history').addClass('bg-white text-green-900').removeClass('bg-green-900 text-white');
+        $('#tab-history-content').hide();
+        $('#tab-inquiry-content').show();
+      });
+      // 최초 진입 시 1:1 상담문의만 보이게
+      $('#tab-history-content').hide();
+      $('#tab-inquiry-content').show();
+
+      // FAQ 아코디언 기능
+      $(document).on('click', '.faq-q', function() {
+        var answer = $(this).next('.faq-a');
+        var arrow = $(this).find('.faq-arrow');
+        $('.faq-a').not(answer).slideUp();
+        $('.faq-q').not($(this)).find('.faq-arrow').removeClass('rotate-180');
+        answer.slideToggle();
+        arrow.toggleClass('rotate-180');
       });
     });
     </script>
