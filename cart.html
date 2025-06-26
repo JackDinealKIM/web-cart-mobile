@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>장바구니</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -27,11 +28,13 @@
         <div class="mx-auto">
             <div class="flex items-center justify-between mt-1 mb-2">
                 <div class="relative">
-                    <button id="store-dropdown-btn" type="button" class="flex items-center bg-green-50 text-green-900 font-semibold px-4 py-2 rounded w-60 justify-between">
+                    <button id="store-dropdown-btn" type="button"
+                        class="flex items-center bg-green-50 text-green-900 font-semibold px-4 py-2 rounded w-60 justify-between">
                         <span id="store-dropdown-label">천안 불당지웰시티점</span>
                         <span class="ml-2">▼</span>
                     </button>
-                    <ul id="store-dropdown-list" class="absolute left-0 mt-1 w-60 bg-white border border-green-900 rounded shadow-lg z-20 hidden">
+                    <ul id="store-dropdown-list"
+                        class="absolute left-0 mt-1 w-60 bg-white border border-green-900 rounded shadow-lg z-20 hidden">
                         <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="천안 불당지웰시티점">천안 불당지웰시티점</li>
                         <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="서울 강남점">서울 강남점</li>
                         <li class="px-4 py-2 hover:bg-green-50 cursor-pointer" data-store="대전 둔산점">대전 둔산점</li>
@@ -41,41 +44,49 @@
             <div class="flex items-center gap-1 mb-1">
                 <input type="checkbox" id="cart-all" class="form-checkbox w-4 h-4 text-green-900 rounded">
                 <label for="cart-all" class="text-sm font-bold">전체 선택</label>
-                <button class="ml-auto border border-gray-300 rounded px-1 py-0.5 text-[10px]" id="cart-delete-selected">선택 삭제</button>
+                <button class="ml-auto border border-gray-300 rounded px-1 py-0.5 text-[10px]"
+                    id="cart-delete-selected">선택 삭제</button>
             </div>
             <hr class="mb-2" />
             <!-- 장바구니 아이템 리스트 -->
             <div id="cart-list" class="flex flex-col gap-6">
                 <!-- 아이템 1 -->
                 <div class="cart-item-row">
+                    <div class="flex items-center justify-between">
+                        <div class="font-bold text-sm">이고장 명품 전복죽</div>
+                        <div class="font-bold text-xs">10,900원</div>
+                    </div>
                     <div class="flex items-start gap-4 w-full bg-white pt-4 rounded-xl">
                         <input type="checkbox"
                             class="form-checkbox w-4 h-4 text-green-900 rounded cart-item-check mt-1">
                         <img src="https://picsum.photos/300/400?random=11"
-                            class="aspect-square rounded object-cover border btn-order cursor-pointer" width="60" height="60" />
+                            class="aspect-square rounded object-cover border btn-order cursor-pointer ml-[-5px]" width="90"
+                            height="90" />
                         <div class="flex-1 min-w-0 flex flex-col gap-2">
                             <div class="flex items-start justify-between">
                                 <div>
-                                    <div class="font-bold text-lg">이고장 명품 전복죽</div>
-                                    <div class="text-gray-800 text-base font-medium">이고장 명품 전복죽</div>
-                                    <div class="text-gray-500 text-sm">10,900원 / 1개</div>
-                                    <div class="text-gray-400 text-xs leading-tight h-[32px] overflow-hidden break-words" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">신발탈취제</div>
-                                    <span
-                                        class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img
-                                            src="./images/location.png" width="12" class="mr-1" />현장 수령</span>
+                                    <div class="font-bold text-xs">이고장 명품 전복죽</div>
+                                    <div class="font-bold text-xs">10,900원 / 1개</div>
+                                    <div class="text-gray-800 text-xs font-medium mt-1 mb-1">이고장 명품 전복죽</div>
                                 </div>
                                 <div class="flex flex-col items-end gap-2 ml-2 w-[100px]">
-                                    <span class="font-bold text-[13px] price">22,900원</span>
+                                    <!-- <span class="font-bold text-[13px] price">22,900원</span> -->
                                     <button
                                         class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 mt-2 justify-end">
-                                <button
-                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
-                                <span class="w-8 text-center" id="cart-qty-1">1</span>
-                                <button
-                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
+                            <div class="flex items-center gap-2 justify-end border-gray-200 justify-between">
+                                <span
+                                    class="inline-flex items-center bg-gray-800 text-white  text-[10px] px-2 py-1 rounded-xl mt-1"><img
+                                        src="./images/location.png" width="10" class="mr-1" />현장 수령</span>
+
+                                <div class="flex items-center gap-1 justify-end border border-gray-300">
+                                    <button
+                                        class="w-4 h-4  rounded text-sm font-bold text-gray-700 cart-qty-minus pb-[22px] pl-[12px]">-</button>
+                                    <span class="w-8 text-center text-sm" id="cart-qty-1">1</span>
+                                    <button
+                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-plus  pb-[22px] pr-[12px]">+</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,14 +98,17 @@
                         <input type="checkbox"
                             class="form-checkbox w-4 h-4 text-green-900 rounded cart-item-check mt-1">
                         <img src="https://picsum.photos/300/400?random=18"
-                            class="aspect-square rounded object-cover border btn-order cursor-pointer" width="60" height="60" />
+                            class="aspect-square rounded object-cover border btn-order cursor-pointer" width="60"
+                            height="60" />
                         <div class="flex-1 min-w-0 flex flex-col gap-2">
                             <div class="flex items-start justify-between">
                                 <div>
                                     <div class="font-bold text-lg">이고장 명품 전복죽</div>
                                     <div class="text-gray-800 text-base font-medium">이고장 명품 전복죽</div>
                                     <div class="text-gray-500 text-sm">10,900원 / 1개</div>
-                                    <div class="text-gray-400 text-xs leading-tight h-[32px] overflow-hidden break-words" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">신발탈취제</div>
+                                    <div class="text-gray-400 text-xs leading-tight h-[32px] overflow-hidden break-words"
+                                        style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                                        신발탈취제</div>
                                     <span
                                         class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img
                                             src="./images/location.png" width="12" class="mr-1" />현장 수령</span>
@@ -115,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="pb-40"></div>
         </div>
@@ -123,7 +137,8 @@
     <!-- 하단 네비게이션 -->
     <default-bottom></default-bottom>
     <!-- 총 금액/결제하기 UI -->
-    <div id="cart-total-bar" class="fixed left-0 right-0 bottom-0 bg-white z-30 border-t border-gray-200 px-4 py-6 hidden">
+    <div id="cart-total-bar"
+        class="fixed left-0 right-0 bottom-0 bg-white z-30 border-t border-gray-200 px-4 py-6 hidden">
         <div class="max-w-xl mx-auto">
             <div class="flex items-center justify-between mb-6">
                 <span class="text-xl font-bold">총 금액</span>
@@ -180,7 +195,7 @@
             // 총 금액/결제 UI 업데이트 함수
             function updateCartTotalBar() {
                 var total = 0;
-                $('.cart-item-check:checked').each(function() {
+                $('.cart-item-check:checked').each(function () {
                     var $row = $(this).closest('.cart-item-row');
                     // 금액, 수량 추출
                     var priceText = $row.find('.price').first().text().replace(/[^\d]/g, '');
@@ -205,16 +220,16 @@
             });
 
             // 매장 드롭다운
-            $('#store-dropdown-btn').on('click', function(e) {
+            $('#store-dropdown-btn').on('click', function (e) {
                 e.stopPropagation();
                 $('#store-dropdown-list').toggle();
             });
-            $('#store-dropdown-list li').on('click', function() {
+            $('#store-dropdown-list li').on('click', function () {
                 var store = $(this).data('store');
                 $('#store-dropdown-label').text(store);
                 $('#store-dropdown-list').hide();
             });
-            $(document).on('click', function(e) {
+            $(document).on('click', function (e) {
                 if (!$(e.target).closest('#store-dropdown-btn, #store-dropdown-list').length) {
                     $('#store-dropdown-list').hide();
                 }
