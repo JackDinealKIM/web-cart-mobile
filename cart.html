@@ -47,15 +47,17 @@
                 <button class="ml-auto border border-gray-300 rounded px-1 py-0.5 text-[10px]"
                     id="cart-delete-selected">선택 삭제</button>
             </div>
-            <hr class="mb-2" />
+            <hr class="mb-5 mt-5" />
             <!-- 장바구니 아이템 리스트 -->
             <div id="cart-list" class="flex flex-col gap-6">
                 <!-- 아이템 1 -->
                 <div class="cart-item-row">
+                    <!-- 세션 1: 상단 상품명/가격 -->
                     <div class="flex items-center justify-between">
                         <div class="font-bold text-sm">이고장 명품 전복죽</div>
-                        <div class="font-bold text-xs">10,900원</div>
+                        <div class="font-bold text-sm">10,900원</div>
                     </div>
+                    <!-- 세션 2: 체크박스, 이미지, 삭제버튼 -->
                     <div class="flex items-start gap-4 w-full bg-white pt-4 rounded-xl">
                         <input type="checkbox"
                             class="form-checkbox w-4 h-4 text-green-900 rounded cart-item-check mt-1">
@@ -67,25 +69,25 @@
                                 <div>
                                     <div class="font-bold text-xs">이고장 명품 전복죽</div>
                                     <div class="font-bold text-xs">10,900원 / 1개</div>
-                                    <div class="text-gray-800 text-xs font-medium mt-1 mb-1">이고장 명품 전복죽</div>
                                 </div>
+                                
                                 <div class="flex flex-col items-end gap-2 ml-2 w-[100px]">
                                     <!-- <span class="font-bold text-[13px] price">22,900원</span> -->
                                     <button
-                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
+                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove mt-[-8px]">&times;</button>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 justify-end border-gray-200 justify-between">
+                            <div class="text-gray-800 text-xs font-medium w-full text-ellipsis whitespace-nowrap overflow-hidden">이고장 명품 전복죽 이고장 명품 전복죽 </div>
+                            <div class="flex items-center w-full mt-1 justify-between">
                                 <span
-                                    class="inline-flex items-center bg-gray-800 text-white  text-[10px] px-2 py-1 rounded-xl mt-1"><img
+                                    class="inline-flex items-center bg-gray-800 text-white text-[10px] px-2 py-1 rounded-xl"><img
                                         src="./images/location.png" width="10" class="mr-1" />현장 수령</span>
-
-                                <div class="flex items-center gap-1 justify-end border border-gray-300">
+                                <div class="flex items-center gap-1 border border-gray-300 ml-2">
                                     <button
-                                        class="w-4 h-4  rounded text-sm font-bold text-gray-700 cart-qty-minus pb-[22px] pl-[12px]">-</button>
+                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-minus pb-[22px] pl-[12px]">-</button>
                                     <span class="w-8 text-center text-sm" id="cart-qty-1">1</span>
                                     <button
-                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-plus  pb-[22px] pr-[12px]">+</button>
+                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-plus pb-[22px] pr-[12px]">+</button>
                                 </div>
                             </div>
                         </div>
@@ -94,37 +96,41 @@
                 <hr class="mb-2">
                 <!-- 아이템 2 -->
                 <div class="cart-item-row">
+                    <!-- 세션 1: 상단 상품명/가격 -->
+                    <div class="flex items-center justify-between">
+                        <div class="font-bold text-sm">이고장 명품 전복죽</div>
+                        <div class="font-bold text-sm">10,900원</div>
+                    </div>
+                    <!-- 세션 2: 체크박스, 이미지, 삭제버튼 -->
                     <div class="flex items-start gap-4 w-full bg-white pt-4 rounded-xl">
                         <input type="checkbox"
                             class="form-checkbox w-4 h-4 text-green-900 rounded cart-item-check mt-1">
                         <img src="https://picsum.photos/300/400?random=18"
-                            class="aspect-square rounded object-cover border btn-order cursor-pointer" width="60"
-                            height="60" />
+                            class="aspect-square rounded object-cover border btn-order cursor-pointer" width="90"
+                            height="90" />
                         <div class="flex-1 min-w-0 flex flex-col gap-2">
                             <div class="flex items-start justify-between">
                                 <div>
-                                    <div class="font-bold text-lg">이고장 명품 전복죽</div>
-                                    <div class="text-gray-800 text-base font-medium">이고장 명품 전복죽</div>
-                                    <div class="text-gray-500 text-sm">10,900원 / 1개</div>
-                                    <div class="text-gray-400 text-xs leading-tight h-[32px] overflow-hidden break-words"
-                                        style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">
-                                        신발탈취제</div>
-                                    <span
-                                        class="inline-flex items-center bg-gray-800 text-white text-xs px-2 py-1 rounded mt-1"><img
-                                            src="./images/location.png" width="12" class="mr-1" />현장 수령</span>
+                                    <div class="font-bold text-xs">이고장 명품 전복죽</div>
+                                    <div class="font-bold text-xs">10,900원 / 1개</div>
                                 </div>
                                 <div class="flex flex-col items-end gap-2 ml-2 w-[100px]">
-                                    <span class="font-bold text-[13px] price">22,900원</span>
                                     <button
-                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove">&times;</button>
+                                        class="text-2xl text-gray-400 hover:text-gray-700 cart-item-remove mt-[-8px]">&times;</button>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 mt-2 justify-end">
-                                <button
-                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-minus">-</button>
-                                <span class="w-8 text-center" id="cart-qty-1">1</span>
-                                <button
-                                    class="w-8 h-8 border border-gray-300 rounded text-xl font-bold text-gray-700 cart-qty-plus">+</button>
+                            <div class="text-gray-800 text-xs font-medium w-full text-ellipsis whitespace-nowrap overflow-hidden">이고장 명품 전복죽 이고장 명품 전복죽 </div>
+                            <div class="flex items-center w-full mt-1 justify-between">
+                                <span
+                                    class="inline-flex items-center bg-gray-800 text-white text-[10px] px-2 py-1 rounded-xl"><img
+                                        src="./images/location.png" width="10" class="mr-1" />현장 수령</span>
+                                <div class="flex items-center gap-1 border border-gray-300 ml-2">
+                                    <button
+                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-minus pb-[22px] pl-[12px]">-</button>
+                                    <span class="w-8 text-center text-sm" id="cart-qty-2">1</span>
+                                    <button
+                                        class="w-4 h-4 rounded text-sm font-bold text-gray-700 cart-qty-plus pb-[22px] pr-[12px]">+</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -197,11 +203,12 @@
                 var total = 0;
                 $('.cart-item-check:checked').each(function () {
                     var $row = $(this).closest('.cart-item-row');
-                    // 금액, 수량 추출
-                    var priceText = $row.find('.price').first().text().replace(/[^\d]/g, '');
-                    var qty = parseInt($row.find('span[id^="cart-qty-"]').text());
+                    // 가격 추출: 상단 가격(세션1)에서 추출
+                    var priceText = $row.find('> .flex.items-center.justify-between .font-bold.text-sm').last().text().replace(/[^\d]/g, '');
                     var price = parseInt(priceText) || 0;
-                    total += price * (qty || 1);
+                    // 수량 추출: 수량 span(id^="cart-qty-")
+                    var qty = parseInt($row.find('span[id^="cart-qty-"]').text()) || 1;
+                    total += price * qty;
                 });
                 if ($('.cart-item-check:checked').length > 0) {
                     $('#cart-total-bar').removeClass('hidden');
@@ -212,7 +219,6 @@
             }
             // 페이지 진입 시 초기화
             updateCartTotalBar();
-
 
             // btn-order 클릭 시 order.html 이동
             $(document).on('click', '.btn-order', function () {
