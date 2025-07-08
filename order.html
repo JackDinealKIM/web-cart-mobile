@@ -14,24 +14,22 @@
     <div class="w-full bg-gray-100 flex items-center justify-center overflow-hidden h-[40vh] max-h-[550px] relative">
         <div id="order-carousel" class="w-full h-full relative">
             <div class="w-full h-full overflow-hidden relative">
-                <div class="flex transition-transform duration-300 h-full" style="width: 500%;" id="carousel-track">
-                    <img src="https://picsum.photos/1024/1024?random=11" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
-                    <img src="https://picsum.photos/1024/1024?random=12" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
-                    <img src="https://picsum.photos/1024/1024?random=13" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
-                    <img src="https://picsum.photos/1024/1024?random=14" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
-                    <img src="https://picsum.photos/1024/1024?random=15" class="w-full h-full object-cover bg-white flex-shrink-0" style="width: 100%;" />
+                <div class="flex transition-transform duration-300 h-full" id="carousel-track">
+                    <img src="https://picsum.photos/1024/1024?random=1" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=12" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=73" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=44" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=55" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=66" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=77" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=81" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
+                    <img src="https://picsum.photos/1024/1024?random=812" class="w-[80%] h-full max-w-full max-h-full object-contain bg-white flex-shrink-0" />
                 </div>
                 <!-- 좌우 화살표 -->
                 <button id="carousel-prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black bg-opacity-30 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"><span class="text-xl">&#8592;</span></button>
                 <button id="carousel-next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black bg-opacity-30 text-white rounded-full w-8 h-8 flex items-center justify-center z-10"><span class="text-xl">&#8594;</span></button>
                 <!-- 인디케이터 -->
-                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
-                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
-                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
-                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
-                    <span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>
-                </div>
+                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10" id="carousel-dots"></div>
             </div>
         </div>
     </div>
@@ -103,77 +101,104 @@
     <script src="common/default_header.js"></script>
     <script>
       $(function() {
-        // 장바구니 버튼 클릭 시 cart.html로 이동
-        $("button:contains('장바구니')").on('click', function() {
-          location.href = 'cart.html';
-        });
-        // 주문하기 버튼 클릭 이벤트
-        $("button:contains('주문하기')").on('click', function() {
-          // 이미 토스트가 있으면 제거
-          $("#order-toast").remove();
-          // 토스트 HTML 생성
-          const toast = $(
-            `<div id="order-toast" class="fixed left-1/2 top-28 z-50 -translate-x-1/2 flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#054944] text-white text-sm font-bold shadow-lg opacity-0 pointer-events-none transition-all duration-300">
-              <img src="images/order_complete.png" alt="달력" class="w-8 h-8 mr-1" />
-              정상적으로 주문이 완료되었습니다.
-            </div>`
-          );
-          // 헤더 바로 아래에 삽입
-          $("default-header").after(toast);
-          // 애니메이션: opacity 0→100, pointer-events auto
-          setTimeout(function() {
-            toast.removeClass('opacity-0 pointer-events-none').addClass('opacity-100');
-          }, 10);
-          // 1초 후 my_order.html로 이동 (toast는 자연스럽게 사라짐)
-          setTimeout(function() {
-            toast.removeClass('opacity-100').addClass('opacity-0 pointer-events-none');
-            setTimeout(function() { toast.remove(); location.href = 'my_order.html'; }, 300);
-          }, 1000);
-        });
-
-        // 캐러셀 기능
-        var current = 0;
-        var total = 5;
-        function updateCarousel() {
-          $('#carousel-track').css('transform', 'translateX(' + (-100 * current) + '%)');
-          $('.carousel-dot').removeClass('bg-green-900 opacity-100').addClass('bg-white opacity-70');
-          $('.carousel-dot').eq(current).removeClass('bg-white opacity-70').addClass('bg-green-900 opacity-100');
+        var $carousel = $('#order-carousel');
+        var $track = $('#carousel-track');
+        var $imgs = $track.find('img');
+        var imgCount = $imgs.length;
+        var gap = 0;
+        var imgWidth = $carousel.width();
+        var offset = 0;
+        var current = 1;
+        function updateCarouselLayout() {
+          imgWidth = $carousel.width();
+          offset = 0;
+          $track.width((imgWidth + gap) * (imgCount + 2));
+          $track.find('img').each(function() {
+            $(this).width(imgWidth);
+            $(this).css('margin-right', gap + 'px');
+          });
+          $track.css('transform', 'translateX(' + (-current * (imgWidth + gap) + offset) + 'px)');
         }
-        $('#carousel-prev').on('click', function() {
-          current = (current - 1 + total) % total;
-          updateCarousel();
+        updateCarouselLayout();
+        $(window).on('resize', function() {
+          updateCarouselLayout();
         });
-        $('#carousel-next').on('click', function() {
-          current = (current + 1) % total;
-          updateCarousel();
+        // 트랙 width 및 각 이미지 width/gap 설정
+        // 무한루프용 이미지 복제
+        // 복제 이미지 추가 코드 완전히 삭제 (아래 줄들 제거)
+        // $track.prepend($imgs.last().clone().width(imgWidth).css('margin-right', gap + 'px'));
+        // $track.append($imgs.first().clone().width(imgWidth).css('margin-right', gap + 'px'));
+        // 복제 후 다시 img 선택
+        var $allImgs = $track.find('img');
+        $allImgs.each(function() {
+          $(this).width(imgWidth);
+          $(this).css('margin-right', gap + 'px');
         });
-        $('.carousel-dot').on('click', function() {
-          current = $(this).index();
-          updateCarousel();
+        // 이미지 개수만큼 인디케이터(dot) 동적 생성
+        var imgCount = $track.find('img').length;
+        var $dotContainer = $('#carousel-dots');
+        $dotContainer.empty();
+        for (var i = 0; i < imgCount; i++) {
+          $dotContainer.append('<span class="carousel-dot w-2 h-2 rounded-full bg-white opacity-70"></span>');
+        }
+        // 시작 위치: 실제 첫 이미지
+        // dot 인디케이터
+        function updateDots() {
+          var idx;
+          if (current === 0) {
+            idx = imgCount - 1; // 마지막 dot
+          } else if (current === imgCount + 1) {
+            idx = 0; // 첫 dot
+          } else {
+            idx = current - 1;
+          }
+          $('.carousel-dot').removeClass('bg-green-900 opacity-100').addClass('bg-white opacity-70');
+          $('.carousel-dot').eq(idx).removeClass('bg-white opacity-70').addClass('bg-green-900 opacity-100');
+        }
+        // 캐러셀 이동
+        function updateCarousel() {
+          // current 인덱스 경계값 보정
+          if (current < 0) current = 0;
+          if (current > imgCount + 1) current = imgCount + 1;
+          $track.css('transition', 'transform 0.3s');
+          $track.css('transform', 'translateX(' + (-current * (imgWidth + gap) + offset) + 'px)');
+          updateDots();
+        }
+        // 좌우 버튼
+        $('#carousel-prev').on('click', function() { current--; updateCarousel(); });
+        $('#carousel-next').on('click', function() { current++; updateCarousel(); });
+        // dot 클릭
+        $('.carousel-dot').on('click', function() { current = $(this).index() + 1; updateCarousel(); });
+        // transitionend로 무한루프 처리
+        $track.on('transitionend', function() {
+          if (current === 0) {
+            $track.css('transition', 'none');
+            current = imgCount;
+            $track.css('transform', 'translateX(' + (-current * (imgWidth + gap) + offset) + 'px)');
+            setTimeout(function() { $track.css('transition', 'transform 0.3s'); }, 20);
+          }
+          if (current === imgCount + 1) {
+            $track.css('transition', 'none');
+            current = 1;
+            $track.css('transform', 'translateX(' + (-current * (imgWidth + gap) + offset) + 'px)');
+            setTimeout(function() { $track.css('transition', 'transform 0.3s'); }, 20);
+          }
         });
         // 모바일 스와이프 지원
         var startX = 0, endX = 0;
-        $('#order-carousel')[0].addEventListener('touchstart', function(e) {
-          startX = e.touches[0].clientX;
-        });
-        $('#order-carousel')[0].addEventListener('touchmove', function(e) {
-          endX = e.touches[0].clientX;
-        });
+        $('#order-carousel')[0].addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; });
+        $('#order-carousel')[0].addEventListener('touchmove', function(e) { endX = e.touches[0].clientX; });
         $('#order-carousel')[0].addEventListener('touchend', function(e) {
           if (startX && endX) {
             var diff = startX - endX;
             if (Math.abs(diff) > 40) {
-              if (diff > 0) { // left swipe
-                current = (current + 1) % total;
-              } else { // right swipe
-                current = (current - 1 + total) % total;
-              }
+              if (diff > 0) { current++; } else { current--; }
               updateCarousel();
             }
           }
           startX = 0; endX = 0;
         });
-        updateCarousel();
+        updateDots();
       });
     </script>
 </body>
